@@ -7,10 +7,20 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        
+        Button(action: {
+            AF.request("http://www.reflector-online.com/search/?c%5B%5D=news%2F*&t=article&f=rss").response { response in
+                debugPrint(response)
+            }
+        }) {
+            Text("Press Me")
+        }
+        
+        
     }
 }
 
