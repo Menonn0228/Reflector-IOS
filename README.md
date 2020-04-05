@@ -16,15 +16,15 @@ Develop a quality-focused app that focuses on simplicity and stability while mai
 ## Technical Application Specifications
 
 ### Build Information
-	* **Language:** Swift 5.1
-	* **User Interface Framework:** SwiftUI
-	* **Supported Devices:** iOS 13.0 or newer.
+* Language: Swift 5.1
+* User Interface Framework: SwiftUI
+* Supported Devices: iOS 13.0 or newer.
 
 ### Primary Design Architecture
 **MVVM** — For those not familiar with this architecture, this is called Model View ViewModel. Basically, you have your Model (Data), a View (The interface), and a ViewModel for each view. The ViewModel classes will only contain the data from a model  that needs to be presented in that view. This separation allows for the Views to avoid interacting with the model data. The ViewModels should tell the View what to display. Research MVVM in SwiftUI for more information.
 
 ### Dependencies Used
-	* [ Alamofire V.5.1](https://github.com/Alamofire/Alamofire)
+[Alamofire V.5.1](https://github.com/Alamofire/Alamofire)
 
 *Note: All dependencies are managed using Swift Package Manager. For future developers, do your absolute best to only use SPM if you have to add dependencies.*
 
