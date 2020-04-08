@@ -13,7 +13,12 @@ struct ContentView: View {
     var body: some View {
         
         Button(action: {
-            RSSNetworkManager.shared.fetchNews()
+            let articles = RSSNetworkManager.shared.fetchNews()
+            if let articles = articles {
+                for article in articles {
+                    print(article.title ?? "Title DNE")
+                }
+            }
         }) {
             Text("Press Me")
         }

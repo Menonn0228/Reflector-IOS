@@ -16,62 +16,27 @@ class RSSNetworkManager {
     private let baseURL: String = "http://www.reflector-online.com/search/"
     static let shared = RSSNetworkManager()
     
-    // MARK: - Enums
-    /// Parameter Struct is used to define the search parameters for an RSS Feed Request.
-    /// Use **stringify()** method to return the parsed search parameters and add this to the baseURL.
-    /// - Example of string for parameter being returned: `?f=rss&t=article&l=50&c[]=news/*`
-    struct Parameter {
-        enum FeedCategory: String {
-            case news
-        }
-        enum TypeCategory: String {
-            case article
-        }
-        enum FeedType: String {
-            case rss
-        }
-        var t: TypeCategory?
-        var l: Int?
-        var c: FeedCategory?
-        var f: FeedType?
-        
-        
-        func stringify() -> String {
-            var params = "?"
-            
-            if let f = f {
-                params += "f=\(f.rawValue)&"
-            }
-            
-            if let t = t {
-                params += "t=\(t.rawValue)&"
-            }
-            if let l = l {
-                params += "l=\(l)&"
-            }
-            
-            if let c = c {
-                params += "c[]=\(c.rawValue)/*"
-            }
-            return params
-        }
-    }
     
+    // MARK: - Fetch Methods
     
-    public func fetchNews() {
-//        let parameters = parseParameters(type: "article", numItems: 50, category: .news)
-        let parameters: Parameter = Parameter(t: .article, l: 10, c: .news, f: .rss)
+    /// Fetches a list of articles from reflector-online.com/news and returns an array of Articles.
+    public func fetchNews() -> [Article]? {
+        let articles: [Article] = []
+        let parameters = Parameter(t: .article, l: 10, c: .news, f: .rss).stringify()
         
-        guard let url = URL(string: baseURL+parameters.stringify()) else {
+        guard let url = URL(string: baseURL+parameters) else {
             print("Bad link when performing fetchNews")
-            return
+            return nil
         }
         
         AF.request(url).response { response in
-            debugPrint(response)
+            debugPrint(response) // TODO: Parse the XML into an array of articles and append to articles variable.
         }
+        return articles // Want this to return Articles.
     }
     
+    
+    /// Fetches Articles of the specified category
     public func fetchArticles(withCategory: String) {
         
     }

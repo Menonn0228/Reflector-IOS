@@ -26,7 +26,7 @@ import Foundation
 /// This is an Article data model.
 class Article {
     // MARK: - Properties
-    // These are propersties that will be retrieved from an RSS GET request
+    // These are properties that will be retrieved from an RSS GET request
     var title: String?
     var description: String?
     var pubDate: String?

@@ -15,6 +15,7 @@
 		EA5B50D824396ADF003E8BFE /* RSSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */; };
 		EA5B50D924396ADF003E8BFE /* RSSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */; };
 		EA5B50DD24396C4F003E8BFE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA5B50DC24396C4F003E8BFE /* Alamofire */; };
+		EA7BCBB2243E73AD00A4AB14 /* ParameterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BCBB1243E73AD00A4AB14 /* ParameterExtension.swift */; };
 		EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D124395A9500B399E0 /* AppDelegate.swift */; };
 		EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D324395A9500B399E0 /* SceneDelegate.swift */; };
 		EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D524395A9500B399E0 /* ReflectorIOS.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 		EA34254F243D4E1800E32748 /* XMLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLHelper.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSNetworkManager.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		EA7BCBB1243E73AD00A4AB14 /* ParameterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterExtension.swift; sourceTree = "<group>"; };
 		EACD73CE24395A9500B399E0 /* ReflectorIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectorIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACD73D124395A9500B399E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACD73D324395A9500B399E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */,
 				EA34254F243D4E1800E32748 /* XMLHelper.swift */,
+				EA7BCBB1243E73AD00A4AB14 /* ParameterExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				EA342550243D4E1800E32748 /* XMLHelper.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
+				EA7BCBB2243E73AD00A4AB14 /* ParameterExtension.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSNetworkManager.swift in Sources */,
