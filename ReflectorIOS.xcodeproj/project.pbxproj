@@ -24,6 +24,7 @@
 		EACD73E124395A9A00B399E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACD73DF24395A9A00B399E0 /* LaunchScreen.storyboard */; };
 		EACD73EC24395A9B00B399E0 /* ReflectorIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73EB24395A9B00B399E0 /* ReflectorIOSTests.swift */; };
 		EACD73F724395A9B00B399E0 /* ReflectorIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73F624395A9B00B399E0 /* ReflectorIOSUITests.swift */; };
+		EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA34254E243D3B0A00E32748 /* PLSREAD.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLSREAD.md; sourceTree = "<group>"; };
+		EA34254E243D3B0A00E32748 /* GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GUIDE.md; sourceTree = "<group>"; };
 		EA34254F243D4E1800E32748 /* XMLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLHelper.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSNetworkManager.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		EACD73F224395A9B00B399E0 /* ReflectorIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectorIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACD73F624395A9B00B399E0 /* ReflectorIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectorIOSUITests.swift; sourceTree = "<group>"; };
 		EACD73F824395A9B00B399E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,7 @@
 		EACD73C524395A9500B399E0 = {
 			isa = PBXGroup;
 			children = (
-				EA34254E243D3B0A00E32748 /* PLSREAD.md */,
+				EA34254E243D3B0A00E32748 /* GUIDE.md */,
 				EACD73D024395A9500B399E0 /* ReflectorIOS */,
 				EACD73EA24395A9B00B399E0 /* ReflectorIOSTests */,
 				EACD73F524395A9B00B399E0 /* ReflectorIOSUITests */,
@@ -139,12 +141,12 @@
 		EACD73D024395A9500B399E0 /* ReflectorIOS */ = {
 			isa = PBXGroup;
 			children = (
-				EA5B50DA24396AEE003E8BFE /* Helpers */,
-				EA5B50D724396AC8003E8BFE /* ViewModels */,
-				EA5B50D624396ABD003E8BFE /* Models */,
 				EACD73D124395A9500B399E0 /* AppDelegate.swift */,
 				EACD73D324395A9500B399E0 /* SceneDelegate.swift */,
-				EACD73D824395A9500B399E0 /* ContentView.swift */,
+				EA5B50DA24396AEE003E8BFE /* Helpers */,
+				EA5B50D624396ABD003E8BFE /* Models */,
+				EAEBCF0B243D55AC00141FC0 /* Views */,
+				EA5B50D724396AC8003E8BFE /* ViewModels */,
 				EACD73DA24395A9A00B399E0 /* Assets.xcassets */,
 				EACD73DF24395A9A00B399E0 /* LaunchScreen.storyboard */,
 				EACD73E224395A9A00B399E0 /* Info.plist */,
@@ -178,6 +180,15 @@
 				EACD73F824395A9B00B399E0 /* Info.plist */,
 			);
 			path = ReflectorIOSUITests;
+			sourceTree = "<group>";
+		};
+		EAEBCF0B243D55AC00141FC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EACD73D824395A9500B399E0 /* ContentView.swift */,
+				EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +331,7 @@
 				EA342550243D4E1800E32748 /* XMLHelper.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
+				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSNetworkManager.swift in Sources */,
 				EACD73D924395A9500B399E0 /* ContentView.swift in Sources */,

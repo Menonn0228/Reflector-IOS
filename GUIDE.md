@@ -1,5 +1,10 @@
 #  Developer Guide to the ReflectorIOS
 
+## Rule of Thumb for Documenting Code
+1. __ALWAYS__ Document methods in your classes, and document what classes do.
+2. If you make spaghetti code that magically works and you don't know why, COMMENT that it works for some reason so that nobody messes with it.
+3. When using code from other sites or Youtube videos, Always comment the link so that othes developers can learn what you did. This may also help with plagarism.
+
 
 ## MVVM Architecture
 This project is built off of an MVVM architecture. This means that you will see three types of files/classes.
@@ -17,13 +22,14 @@ to represent the ViewModel.
 
 ## RSSNetworkManager
 This class uses the  [Alamofire](https://github.com/Alamofire/Alamofire) dependency to make network requests to fetch RSS Feeds.
-When creating networking requests, this class is where you create those methods to do the knitty gritty stuff. That way, when you are wanting to actually *fetch* the data, all you have to do is call the methodts within the class.
+When creating networking requests, this class is where you create those methods to do the knitty gritty stuff. 
+That way, when you are wanting to actually *fetch* the data, all you have to do is call the methodts within the class.
 
-## Rule of Thumb for Documenting Code
+By the way, the RSSNetworkManager is a Singleton Object.
+DO NOT create a new instance of this class whenever you want to use it. Simple call RSSNetworkManager.shared.
+More information on Singleton [here](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/).
 
-1. __ALWAYS__ Document methods in your classes, and document what classes do.
-2. If you make spaghetti code that magically works and you don't know why, COMMENT that it works for some reason so that nobody messes with it.
-3. When using code from other sites or Youtube videos, Always comment the link so that othes developers can learn what you did. This may also help with plagarism.
+
 
 
 

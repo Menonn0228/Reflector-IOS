@@ -9,7 +9,7 @@
 import Foundation
 
 /*
- Example of what this looks like from a GET Request
+ Example of what an article looks like from a GET Request
  <item>
      <title>MSU moves to optional pass/fail grading system</title>
      <description>Mississippi State University announced Monday that they would be going to an optional
@@ -25,7 +25,6 @@ import Foundation
 
 /// This is an Article data model.
 class Article {
-    
     // MARK: - Properties
     // These are propersties that will be retrieved from an RSS GET request
     var title: String?
