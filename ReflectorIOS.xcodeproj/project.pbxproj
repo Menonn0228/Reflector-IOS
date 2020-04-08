@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA342550243D4E1800E32748 /* XMLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* XMLHelper.swift */; };
 		EA5B50CF2439684E003E8BFE /* RSSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */; };
 		EA5B50D324396AB9003E8BFE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50D224396AB9003E8BFE /* Article.swift */; };
 		EA5B50D424396AB9003E8BFE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50D224396AB9003E8BFE /* Article.swift */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA34254E243D3B0A00E32748 /* PLSREAD.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLSREAD.md; sourceTree = "<group>"; };
+		EA34254F243D4E1800E32748 /* XMLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLHelper.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSNetworkManager.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EACD73CE24395A9500B399E0 /* ReflectorIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectorIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				EA5B50CE2439684E003E8BFE /* RSSNetworkManager.swift */,
+				EA34254F243D4E1800E32748 /* XMLHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,6 +118,7 @@
 		EACD73C524395A9500B399E0 = {
 			isa = PBXGroup;
 			children = (
+				EA34254E243D3B0A00E32748 /* PLSREAD.md */,
 				EACD73D024395A9500B399E0 /* ReflectorIOS */,
 				EACD73EA24395A9B00B399E0 /* ReflectorIOSTests */,
 				EACD73F524395A9B00B399E0 /* ReflectorIOSUITests */,
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA342550243D4E1800E32748 /* XMLHelper.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,

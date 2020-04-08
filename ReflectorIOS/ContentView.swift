@@ -13,9 +13,7 @@ struct ContentView: View {
     var body: some View {
         
         Button(action: {
-            AF.request("http://www.reflector-online.com/search/?c%5B%5D=news%2F*&t=article&f=rss").response { response in
-                debugPrint(response)
-            }
+            RSSNetworkManager.shared.fetchNews()
         }) {
             Text("Press Me")
         }

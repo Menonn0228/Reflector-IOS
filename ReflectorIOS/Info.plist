@@ -24,11 +24,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>reflector-online.com</key>
-			<dict/>
-		</dict>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
