@@ -10,18 +10,19 @@ import Foundation
 import Alamofire
 
 /// RSSNetworkManager utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
-class RSSNetworkManager {
+class RSSNetworkManager: NSObject, XMLParserDelegate {
     
     // MARK: - Properties
     private let baseURL: String = "http://www.reflector-online.com/search/"
     static let shared = RSSNetworkManager()
+    private let xmlHelper = XMLHelper()
     
     
     // MARK: - Fetch Methods
     
     /// Fetches a list of articles from reflector-online.com/news and returns an array of Articles.
     public func fetchNews() -> [Article]? {
-        let articles: [Article] = []
+        var articles: [Article] = []
         let parameters = Parameter(t: .article, l: 10, c: .news, f: .rss).stringify()
         
         guard let url = URL(string: baseURL+parameters) else {
@@ -31,8 +32,11 @@ class RSSNetworkManager {
         
         AF.request(url).response { response in
             debugPrint(response) // TODO: Parse the XML into an array of articles and append to articles variable.
+            if let data = response.data {
+                articles = self.xmlHelper.parse(Article.self, data: data)
+            }
         }
-        return articles // Want this to return Articles.
+        return articles
     }
     
     
@@ -42,5 +46,6 @@ class RSSNetworkManager {
     }
     
     
+    // MARK: - Parse Methods
     
 }
