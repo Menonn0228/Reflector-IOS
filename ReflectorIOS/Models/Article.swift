@@ -33,4 +33,16 @@ class Article {
     var link: String?
     var creator: String?
     
+    
+    /// These are the tags that identify an Article in an RSS feed. This is used in the XMLHelper class.
+    enum tags: String {
+        case item = "item"
+        case title = "title"
+        case description = "description"
+        case pubDate = "pubDate"
+        case link = "link"
+        case creator = "dc: creator"
+    }
+    
+    
 }

@@ -18,15 +18,6 @@ class XMLHelper: NSObject, XMLParserDelegate {
         case invalidDataInput
     }
     
-    enum tags: String {
-        case item = "item"
-        case title = "title"
-        case description = "description"
-        case pubDate = "pubDate"
-        case link = "link"
-        case creator = "dc: creator"
-    }
-    
     public var data: Data!
     
     public func parse<T>(_ resultType: T.Type, data: Data) -> [T] {
@@ -62,22 +53,22 @@ class XMLHelper: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         switch elementName {
             
-        case tags.item.rawValue:
+        case Article.tags.item.rawValue:
             articles.append(article)
             break
-        case tags.title.rawValue:
+        case Article.tags.title.rawValue:
             article.title = currentContent
             break
-        case tags.description.rawValue:
+        case Article.tags.description.rawValue:
             article.description = currentContent
             break
-        case tags.pubDate.rawValue:
+        case Article.tags.pubDate.rawValue:
             article.pubDate = currentContent
             break
-        case tags.link.rawValue:
+        case Article.tags.link.rawValue:
             article.link = currentContent
             break
-        case tags.creator.rawValue:
+        case Article.tags.creator.rawValue:
             article.creator = currentContent
             break
             
