@@ -46,7 +46,7 @@ class Article: NSObject {
         case description = "description"
         case pubDate = "pubDate"
         case link = "link"
-        case creator = "dc: creator"
+        case creator = "dc:creator"
     }
     
     func debug_print() {

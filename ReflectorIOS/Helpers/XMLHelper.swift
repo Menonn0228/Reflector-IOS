@@ -48,10 +48,17 @@ class XMLHelper: NSObject, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        if elementName == "item" {
+        switch elementName {
+        case Article.tags.item.rawValue:
             object = Article()
             self.currentContent = ""
+            break
+            
+        default:
+            self.currentContent = ""
         }
+        
+        
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
