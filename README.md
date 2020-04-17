@@ -29,4 +29,9 @@ Develop a quality-focused app that focuses on simplicity and stability while mai
 *Note: All dependencies are managed using Swift Package Manager. For future developers, do your absolute best to only use SPM if you have to add dependencies.*
 
 
-#college/reflector
+- - - -
+### Additional Files
+**ReflectorIOS.paw** can be opened using the Paw API software tool. If you've never used a tool like this, what it does is lets to make a GET,POST, etc. request to a URL and then it shows you the response. 
+It's super helpful! A Windows alternative to Paw is Postman.
+
+**GUIDE.md** is a markdown document meant for developers and will act as a guide to maneuver the project and its classes. New developers to the team are highly encouraged to read through this living document.
