@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 class XMLHelper: NSObject, XMLParserDelegate {
-    private var articles: [Article] = []
+    private var articles: [Article]
     private var article: Article!
     private var currentContent: String = String()
     
@@ -20,11 +20,20 @@ class XMLHelper: NSObject, XMLParserDelegate {
     
     public var data: Data!
     
+    // MARK: - Init Method
+    override required init() {
+        self.articles = []
+        super.init()
+    }
+    
+    
+    
+    // MARK: - Parse Method
+    
     public func parse<T>(_ resultType: T.Type, data: Data) -> [T] {
         let results: [T] = []
         let parser = XMLParser(data: data)
         parser.delegate = self
-        self.articles = []
         self.article = Article()
         
         if !parser.parse() {
@@ -42,8 +51,8 @@ class XMLHelper: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName == "item" {
             article = Article()
+            self.currentContent = ""
         }
-        self.currentContent = ""
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {

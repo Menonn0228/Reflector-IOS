@@ -21,22 +21,23 @@ class RSSNetworkManager: NSObject, XMLParserDelegate {
     // MARK: - Fetch Methods
     
     /// Fetches a list of articles from reflector-online.com/news and returns an array of Articles.
-    public func fetchNews() -> [Article]? {
-        var articles: [Article] = []
+    /// - parameter completion: Escaping completion will use an optional array of articles. If an error occurs the input may be optional, so safely unwrap this completion parameter. If articles do exist, store it in the ViewModel for use.
+    public func fetchNews(_ completion: @escaping ( (_ articles: [Article]? )-> () )) {
         let parameters = Parameter(t: .article, l: 10, c: .news, f: .rss).stringify()
         
         guard let url = URL(string: baseURL+parameters) else {
             print("Bad link when performing fetchNews")
-            return nil
+            completion(nil)
+            return
         }
         
         AF.request(url).response { response in
             debugPrint(response) // TODO: Parse the XML into an array of articles and append to articles variable.
             if let data = response.data {
-                articles = self.xmlHelper.parse(Article.self, data: data)
+                let articles = self.xmlHelper.parse(Article.self, data: data)
+                completion(articles) // This will make the program step out of the fetchNews method.
             }
         }
-        return articles
     }
     
     

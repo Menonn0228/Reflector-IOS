@@ -13,9 +13,22 @@ struct ArticleListView: View {
     
     @EnvironmentObject var viewModel: ArticleListViewModel
     
+    var myButton: some View {
+        Button(action: {
+            guard let articles = RSSNetworkManager.shared.fetchNews() else { return }
+            print("Printing Parsed Stuff")
+            for article in articles {
+                guard let aTitle = article.title else { break }
+                print(aTitle)
+            }
+        }) {
+            Text("Button")
+        }
+    }
+    
     var body: some View {
         NavigationView {
-         Text("Hello World")
+            myButton
             .navigationBarTitle(self.viewModel.title)
         }
         

@@ -15,6 +15,11 @@ import Combine
 class ArticleListViewModel: ObservableObject {
     @Published var title: String = "The Reflector"
     @Published var date: String = "Feb 04. 2020"
-//    @Published var article: [Article]
+    
+    @Published var articles: [Article] = []
+    
+    
+    
+    
 
 }
