@@ -1,5 +1,5 @@
 //
-//  RSSNetworkManager.swift
+//  RSSService.swift
 //  ReflectorIOS
 //
 //  Created by Nikhil Menon on 4/4/20.
@@ -9,12 +9,12 @@
 import Foundation
 import Alamofire
 
-/// RSSNetworkManager utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
-class RSSNetworkManager: NSObject, XMLParserDelegate {
+/// RSSService utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
+class RSSService: NSObject, XMLParserDelegate {
     
     // MARK: - Properties
     private let baseURL: String = "http://www.reflector-online.com/search/"
-    static let shared = RSSNetworkManager()
+    static let shared = RSSService()
     private let xmlHelper = XMLHelper()
     
     
