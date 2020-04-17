@@ -15,12 +15,7 @@ struct ArticleListView: View {
     
     var myButton: some View {
         Button(action: {
-            guard let articles = RSSNetworkManager.shared.fetchNews() else { return }
-            print("Printing Parsed Stuff")
-            for article in articles {
-                guard let aTitle = article.title else { break }
-                print(aTitle)
-            }
+            self.viewModel.retrieveArticles()
         }) {
             Text("Button")
         }

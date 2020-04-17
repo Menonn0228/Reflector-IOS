@@ -18,6 +18,20 @@ class ArticleListViewModel: ObservableObject {
     
     @Published var articles: [Article] = []
     
+    public func retrieveArticles() {
+        RSSNetworkManager.shared.fetchNews { (articles) in
+            guard let articles = articles else { return }
+            self.articles = articles
+            
+            print("Printing articles in the Viewmodel")
+            for a in self.articles {
+                a.debug_print()
+            }
+        }
+        
+        
+    }
+    
     
     
     

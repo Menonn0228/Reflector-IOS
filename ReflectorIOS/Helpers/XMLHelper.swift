@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 
 class XMLHelper: NSObject, XMLParserDelegate {
-    private var articles: [Article]
-    private var article: Article!
+    private var objects: [Article]
+    private var object: Article!
     private var currentContent: String = String()
     
     enum XMLHelperError: Error {
@@ -22,7 +22,7 @@ class XMLHelper: NSObject, XMLParserDelegate {
     
     // MARK: - Init Method
     override required init() {
-        self.articles = []
+        self.objects = []
         super.init()
     }
     
@@ -30,16 +30,15 @@ class XMLHelper: NSObject, XMLParserDelegate {
     
     // MARK: - Parse Method
     
-    public func parse<T>(_ resultType: T.Type, data: Data) -> [T] {
-        let results: [T] = []
+    public func parse(data: Data) -> [Article] {
         let parser = XMLParser(data: data)
         parser.delegate = self
-        self.article = Article()
+        self.object = Article()
         
         if !parser.parse() {
             print("Data Errors exist in XML. could not parse.")
         }
-        return results
+        return self.objects
     }
     
     
@@ -50,7 +49,7 @@ class XMLHelper: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName == "item" {
-            article = Article()
+            object = Article()
             self.currentContent = ""
         }
     }
@@ -60,25 +59,26 @@ class XMLHelper: NSObject, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        
         switch elementName {
             
         case Article.tags.item.rawValue:
-            articles.append(article)
+            objects.append(object)
             break
         case Article.tags.title.rawValue:
-            article.title = currentContent
+            object.title = currentContent
             break
         case Article.tags.description.rawValue:
-            article.description = currentContent
+            object.desc = currentContent
             break
         case Article.tags.pubDate.rawValue:
-            article.pubDate = currentContent
+            object.pubDate = currentContent
             break
         case Article.tags.link.rawValue:
-            article.link = currentContent
+            object.link = currentContent
             break
         case Article.tags.creator.rawValue:
-            article.creator = currentContent
+            object.creator = currentContent
             break
             
         default: return
