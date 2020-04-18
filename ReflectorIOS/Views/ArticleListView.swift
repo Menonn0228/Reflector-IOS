@@ -15,9 +15,10 @@ struct ArticleListView: View {
     
     var myButton: some View {
         Button(action: {
-            self.viewModel.retrieveArticles()
+            self.viewModel.retrieveNewsArticles()
         }) {
-            Text("Button")
+            Text("Press Me")
+            
         }
     }
     

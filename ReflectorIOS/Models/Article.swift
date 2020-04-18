@@ -30,7 +30,7 @@ class Article: NSObject {
     // These are properties that will be retrieved from an RSS GET request
     var title: String?
     /// This is  the short description of the article
-    var desc: String?
+    var details: String?
     /// Publish date
     var pubDate: String?
     /// Link to full HTML article
@@ -52,7 +52,7 @@ class Article: NSObject {
     func debug_print() {
         print("==== ARTICLE DEBUG ====")
         print("Title: \(self.title ?? "NOT AVAILABLE")")
-        print("Desc: \(self.desc ?? "NOT AVAILABLE")")
+        print("Desc: \(self.details ?? "NOT AVAILABLE")")
         print("Date Published: \(self.pubDate ?? "NOT AVAILABLE")")
         print("Link: \(self.link ?? "NOT AVAILABLE")")
         print("Creator: \(self.creator ?? "NOT AVAILABLE")")

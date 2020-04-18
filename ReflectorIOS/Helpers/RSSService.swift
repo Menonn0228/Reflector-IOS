@@ -8,46 +8,67 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 /// RSSService utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
-class RSSService: NSObject, XMLParserDelegate {
+class RSSService: NSObject {
     
     // MARK: - Properties
     private let baseURL: String = "http://www.reflector-online.com/search/"
     static let shared = RSSService()
-    private let xmlHelper = XMLHelper()
+    private let xmlHelper = articleXMLParser()
+    
+    
+    // MARK: - Error Enums
+    enum RSSServiceError: Error {
+        case noDataReturnedfromRSSFeed
+        case invalidURL
+        
+    }
     
     
     // MARK: - Fetch Methods
     
-    /// Fetches a list of articles from reflector-online.com/news and returns an array of Articles.
-    /// - parameter completion: Escaping completion will use an optional array of articles. If an error occurs the input may be optional, so safely unwrap this completion parameter. If articles do exist, store it in the ViewModel for use.
-    public func fetchNews(_ completion: @escaping ( (_ articles: [Article]? )-> () )) {
-        let parameters = Parameter(t: .article, l: 10, c: .news, f: .rss).stringify()
-        var articles: [Article] = [] // This will be passed into the completion
+    // sauce for fetchArticles(with category: completion:) ->  https://www.youtube.com/watch?v=tdxKIPpPDAI
+    /// Fetches Articles of the specified category
+    /// - parameter category: Is a Parameter.FeedCategory type. Refer to this enum to see potential options. (.news, .sports, etc.)
+    /// - parameter completion: `Result<[Article], RSSServiceError>` is called after data or an error has been retrieved. A succussful response will run  the completion(Result.successful)  block parameter and provide a value that contains the articles.
+    /// A failure in the network call will result in completion(Result.failure) block to be called and will also provide an error type that can be viewed.
+    /// - Example Use Case Seen in ArticleListViewModel
+    /// ```    public func retrieveNewsArticles() {
+    ///        RSSService.shared.fetchArticles(with: .news) { (result) in
+    ///            switch result {
+    ///            case .success(let articles):
+    ///            // Do stuff w/ articles
+    ///            case .failure(let error):
+    ///            // Do stuff w/ error
+    ///            }
+    ///        }
+    ///    } ```
+    public func fetchArticles(with category: Parameter.FeedCategory, _ completion: @escaping((Result<[Article], RSSServiceError>) -> () )) {
+        // TODO: - Fetch Articles based on the given category parameter.
+        let parameter = Parameter(t: .article, l: 50, c: category, f: .rss)
         
-        guard let url = URL(string: baseURL+parameters) else {
-            print("Bad link when performing fetchNews")
-            completion(nil)
+        // If the URL fails, it will run a completion with Failure Result and a coresponding error value.
+        guard let url = URL(string: baseURL+parameter.stringify()) else {
+            completion(.failure(.invalidURL))
             return
         }
-        
-        AF.request(url).response { response in
-//            debugPrint(response) // TODO: Parse the XML into an array of articles and append to articles variable.
-            if let data = response.data {
-                 articles = self.xmlHelper.parse(data: data)
+        // Datatask **defines** a session where we make the call and do something with the response.
+        // We only receive data and not a response or error from the RSS API call. That is why we place ' _ ' for response and error
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else {
+                completion(.failure(.noDataReturnedfromRSSFeed))
+                return
             }
-            completion(articles) // This will make the program step out of the fetchNews method.
+            
+            // decode the data into Articles
+            let articles: [Article] = self.xmlHelper.parse(data: data)
+            completion(.success(articles))
         }
+        
+        // We resum() dataTask to actually start the request and it's completion code.
+        dataTask.resume()
     }
-    
-    
-    /// Fetches Articles of the specified category
-    public func fetchArticles(withCategory: String) {
-        // TODO: - Fetch Articles based on the given category parameter.
-    }
-    
-    
-    // MARK: - Parse Methods
     
 }

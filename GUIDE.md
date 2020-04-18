@@ -55,9 +55,11 @@ Get quick information on important custom classes, extentions, etc. that may hel
 
 
 ### RSSService
-This class uses the  [Alamofire](https://github.com/Alamofire/Alamofire) dependency to make network requests to fetch RSS Feeds.
-When creating networking requests, this class is where you create those methods to do the knitty gritty stuff. 
-That way, when you are wanting to actually *fetch* the data, all you have to do is call the methodts within the class.
+~~This class no longer uses the  [Alamofire](https://github.com/Alamofire/Alamofire) dependency to make network requests to fetch RSS Feeds.~~
+
+This class uses SwiftUI's built-in URLSessions framework  to make network requests to fetch RSS Feeds.
+When fetching articles from an RSS feed, this class does the nitty gritty stuff for you.
+When you are wanting to actually *fetch* the data, all you have to do is call the methodts within the class.
 
 RSSService is a **Singleton object**. This means only one instance needs to be created and it can then be accesses anywhere
 in the project. **Do not** create a new instance of RSSService. Just call  its `shared` property in order to use its methods.
@@ -65,6 +67,8 @@ in the project. **Do not** create a new instance of RSSService. Just call  its `
 Ex: 
 Don't to this `let service = RSSService; service.fetchNews()`
 Do this: `RSSService.shared.fetchNews()`
+
+**For more detailed information on how to use specific methods in this class, refer to the in-line documentation within the RSSService.swift file.**
 
 
 More information on Singleton [here](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/).

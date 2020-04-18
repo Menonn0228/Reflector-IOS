@@ -12,28 +12,23 @@ import Combine
 
 
 /// This is the ViewModel for the ArticleListView
-class ArticleListViewModel: ObservableObject {
+final class ArticleListViewModel: ObservableObject {
     @Published var title: String = "The Reflector"
     @Published var date: String = "Feb 04. 2020"
     
-    @Published var articles: [Article] = []
+    @Published var articleViewModels: [ArticleViewModel] = []
     
-    public func retrieveArticles() {
-        RSSService.shared.fetchNews { (articles) in
-            guard let articles = articles else { return }
-            self.articles = articles
-            
-            print("Printing articles in the Viewmodel")
-            for a in self.articles {
-                a.debug_print()
+    public func retrieveNewsArticles() {
+        RSSService.shared.fetchArticles(with: .news) { (result) in
+            switch result {
+            case .success(let articles):
+                DispatchQueue.main.async {
+                    // The map function performs an operation on each element in articles. In this case, it creates a list of ArticleViewModels for each element in articles.
+                    self.articleViewModels = articles.map { ArticleViewModel($0) }
+                }
+            case .failure(let error):
+                debugPrint(error)
             }
         }
-        
-        
     }
-    
-    
-    
-    
-
 }
