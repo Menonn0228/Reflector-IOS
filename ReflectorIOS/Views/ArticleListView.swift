@@ -10,8 +10,24 @@ import SwiftUI
 /// This view will display the previews for each of the articles.
 /// A user can tap on a row from this list to be taken to the full article.
 struct ArticleListView: View {
+    
+    @EnvironmentObject var viewModel: ArticleListViewModel
+    
+    var myButton: some View {
+        Button(action: {
+            self.viewModel.retrieveNewsArticles()
+        }) {
+            Text("Press Me")
+            
+        }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            myButton
+            .navigationBarTitle(self.viewModel.title)
+        }
+        
     }
 }
 

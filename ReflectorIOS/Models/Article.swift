@@ -23,14 +23,39 @@ import Foundation
  
  */
 
+
 /// This is an Article data model.
-class Article {
+class Article: NSObject {
     // MARK: - Properties
     // These are properties that will be retrieved from an RSS GET request
     var title: String?
-    var description: String?
+    /// This is  the short description of the article
+    var details: String?
+    /// Publish date
     var pubDate: String?
+    /// Link to full HTML article
     var link: String?
+    /// author of the articles
     var creator: String?
+    
+    
+    /// The tags that identify an Article in an RSS feed. This is used in the XMLHelper class.
+    enum tags: String {
+        case item = "item"
+        case title = "title"
+        case description = "description"
+        case pubDate = "pubDate"
+        case link = "link"
+        case creator = "dc:creator"
+    }
+    
+    func debug_print() {
+        print("==== ARTICLE DEBUG ====")
+        print("Title: \(self.title ?? "NOT AVAILABLE")")
+        print("Desc: \(self.details ?? "NOT AVAILABLE")")
+        print("Date Published: \(self.pubDate ?? "NOT AVAILABLE")")
+        print("Link: \(self.link ?? "NOT AVAILABLE")")
+        print("Creator: \(self.creator ?? "NOT AVAILABLE")")
+    }
     
 }

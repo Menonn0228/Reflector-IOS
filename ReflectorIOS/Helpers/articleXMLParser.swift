@@ -1,5 +1,5 @@
 //
-//  XMLHelper.swift
+//  articleXMLParser.swift
 //  ReflectorIOS
 //
 //  Created by Nikhil Menon on 4/7/20.
@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+/// Parses the XML Articles that are retrieved from RSSService.
 final class articleXMLParser: NSObject, XMLParserDelegate {
     private var objects: [Article]
     private var object: Article!
@@ -30,6 +31,7 @@ final class articleXMLParser: NSObject, XMLParserDelegate {
     
     // MARK: - Parse Method
     
+    /// parse takes in a type `Data` and will attempt to decode. This function will return a type `[Article]`
     public func parse(data: Data) -> [Article] {
         let parser = XMLParser(data: data)
         parser.delegate = self
@@ -43,6 +45,10 @@ final class articleXMLParser: NSObject, XMLParserDelegate {
     
     
     // MARK: - XMLParser Delegate Methods
+    // All of these methods below are from the XMLParserDelegate and are called as Swift attempts to decode XML data.
+    // These methods should not be tampered with.
+    // Sauce: https://makeapppie.com/2016/06/06/how-to-read-xml-files-from-the-web-in-swift/
+    
     func parserDidStartDocument(_ parser: XMLParser) {
         print("Starting to Parse")
     }

@@ -10,7 +10,7 @@ import Foundation
 
 /// I'm extending the RSSNetworkManager Class for the sake of neatness.
 /// Parameter Struct should need to be accessed or called outside of RSSManager.
-extension RSSNetworkManager {
+extension RSSService {
     
     // MARK: - Enums
     /// Parameter Struct is used to define the search parameters for an RSS Feed Request.
