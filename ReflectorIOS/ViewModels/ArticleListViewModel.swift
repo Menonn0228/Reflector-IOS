@@ -25,6 +25,9 @@ final class ArticleListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     // The map function performs an operation on each element in articles. In this case, it creates a list of ArticleViewModels for each element in articles.
                     self.articleViewModels = articles.map { ArticleViewModel($0) }
+                    for vm in self.articleViewModels {
+                        print(vm.title)
+                    }
                 }
             case .failure(let error):
                 debugPrint(error)

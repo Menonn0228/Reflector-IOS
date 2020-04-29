@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import Combine
 
 /// RSSService utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
