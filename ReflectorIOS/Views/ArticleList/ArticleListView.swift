@@ -15,19 +15,17 @@ struct ArticleListView: View {
     
     var myButton: some View {
         Button(action: {
-            self.viewModel.retrieveNewsArticles()
+            self.viewModel.debugPrint()
         }) {
             Text("Press Me")
-            
         }
     }
     
     var body: some View {
         NavigationView {
             myButton
-            .navigationBarTitle(self.viewModel.title)
+                .navigationBarTitle(ArticleListViewModel.reflectorTitle)
         }
-        
     }
 }
 

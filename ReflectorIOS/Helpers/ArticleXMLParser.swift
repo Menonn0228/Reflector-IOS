@@ -9,8 +9,14 @@
 import Foundation
 import SwiftUI
 
+
+protocol Parser {
+    associatedtype ParsedObjectType
+    func parse(data: Data) -> ParsedObjectType
+}
+
 /// Parses the XML Articles that are retrieved from RSSService.
-final class articleXMLParser: NSObject, XMLParserDelegate {
+final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
     private var objects: [Article]
     private var object: Article!
     private var currentContent: String = String()
@@ -27,12 +33,10 @@ final class articleXMLParser: NSObject, XMLParserDelegate {
         super.init()
     }
     
-    
-    
     // MARK: - Parse Method
     
     /// parse takes in a type `Data` and will attempt to decode. This function will return a type `[Article]`
-    public func parse(data: Data) -> [Article] {
+    func parse(data: Data) -> [Article] {
         let parser = XMLParser(data: data)
         parser.delegate = self
         self.object = Article()
@@ -97,9 +101,4 @@ final class articleXMLParser: NSObject, XMLParserDelegate {
         default: return
         }
     }
-    
-    
-    
-    
-    
 }

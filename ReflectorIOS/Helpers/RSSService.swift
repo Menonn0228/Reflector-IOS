@@ -7,33 +7,39 @@
 //
 
 import Foundation
-import Alamofire
 import Combine
 
+
+// MARK: - Protocols
+
+protocol RSSServiceManager {
+    func fetchArticles(with category: RSSParameter.FeedCategory, _ completion: @escaping((Result<[Article], RSSServiceError>) -> () ))
+}
+
+// MARK: - Errors
+
+enum RSSServiceError: Error {
+    case noDataReturnedfromRSSFeed
+    case invalidURL
+    
+}
+
 /// RSSService utilizes Alamofire to perform network requests to retrieve the data from the Reflector Website.
-class RSSService: NSObject {
+class RSSService: NSObject, RSSServiceManager {
     
     // MARK: - Properties
+    
     private let baseURL: String = "http://www.reflector-online.com/search/"
     static let shared = RSSService()
-    private let xmlHelper = articleXMLParser()
-    
-    
-    // MARK: - Error Enums
-    enum RSSServiceError: Error {
-        case noDataReturnedfromRSSFeed
-        case invalidURL
-        
-    }
-    
+    private let xmlHelper = ArticleXMLParser()
     
     // MARK: - Fetch Methods
     
-    // sauce for fetchArticles(with category: completion:) ->  https://www.youtube.com/watch?v=tdxKIPpPDAI
-    /// Fetches Articles of the specified category
-    /// - parameter category: Is a Parameter.FeedCategory type. Refer to this enum to see potential options. (.news, .sports, etc.)
-    /// - parameter completion: `Result<[Article], RSSServiceError>` is called after data or an error has been retrieved. A succussful response will run  the completion(Result.successful)  block parameter and provide a value that contains the articles.
-    /// A failure in the network call will result in completion(Result.failure) block to be called and will also provide an error type that can be viewed.
+    /// Fetches Articles of the specified category.
+    /// - Parameters:
+    ///   - category: Is a Parameter.FeedCategory type. Refer to this enum to see potential options. (.news, .sports, etc.)
+    ///   - completion: `Result<[Article], RSSServiceError>` is called after data or an error has been retrieved. A succussful response will run  the completion(Result.successful)  block parameter and provide a value that contains the articles.
+    ///                 A failure in the network call will result in completion(Result.failure) block to be called and will also provide an error type that can be viewed.
     /// - Example Use Case Seen in ArticleListViewModel
     /// ```    public func retrieveNewsArticles() {
     ///        RSSService.shared.fetchArticles(with: .news) { (result) in
@@ -44,10 +50,10 @@ class RSSService: NSObject {
     ///            // Do stuff w/ error
     ///            }
     ///        }
-    ///    } ```
-    public func fetchArticles(with category: Parameter.FeedCategory, _ completion: @escaping((Result<[Article], RSSServiceError>) -> () )) {
+    ///    } ```'
+    func fetchArticles(with category: RSSParameter.FeedCategory, _ completion: @escaping((Result<[Article], RSSServiceError>) -> () )) {
         // TODO: - Fetch Articles based on the given category parameter.
-        let parameter = Parameter(t: .article, l: 50, c: category, f: .rss)
+        let parameter = RSSParameter(t: .article, l: 50, c: category, f: .rss)
         
         // If the URL fails, it will run a completion with Failure Result and a coresponding error value.
         guard let url = URL(string: baseURL+parameter.stringify()) else {

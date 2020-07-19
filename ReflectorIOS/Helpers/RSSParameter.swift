@@ -1,5 +1,5 @@
 //
-//  Parameter.swift
+//  RSSParameter.swift
 //  ReflectorIOS
 //
 //  Created by Nikhil Menon on 4/8/20.
@@ -8,15 +8,13 @@
 
 import Foundation
 
-/// I'm extending the RSSNetworkManager Class for the sake of neatness.
-/// Parameter Struct should need to be accessed or called outside of RSSManager.
-extension RSSService {
-    
-    // MARK: - Enums
-    /// Parameter Struct is used to define the search parameters for an RSS Feed Request.
+    /// RSSParameter struct is used to define the search parameters for an RSS Feed Request.
     /// Use **stringify()** method to return the parsed search parameters and add this to the baseURL.
     /// - Example of string for parameter being returned: `?f=rss&t=article&l=50&c[]=news/*`
-    struct Parameter {
+    struct RSSParameter {
+        
+        // MARK: - Enums
+        
         enum FeedCategory: String {
             case news
         }
@@ -26,10 +24,15 @@ extension RSSService {
         enum FeedType: String {
             case rss
         }
+        
+        // MARK: - Properties
+        
         var t: TypeCategory?
         var l: Int?
         var c: FeedCategory?
         var f: FeedType?
+        
+        // MARK: - Methods
         
         /// Returns a string containing the parameter fields that were assigned to the struct.
         /// Often times, you want to append this to the BaseURL before doing your network requests.
@@ -53,5 +56,3 @@ extension RSSService {
             return params
         }
     }
-    
-}
