@@ -18,6 +18,7 @@ final class ArticleViewModel: ObservableObject {
     private var article: Article
     
     // MARK: - Accessible Computed Properties
+    
     // A computed property is a variable that computes itself whenever it is called, basically.
     public var title: String {
         return article.title ?? "Title N/A"
@@ -36,11 +37,8 @@ final class ArticleViewModel: ObservableObject {
         return article.pubDate ?? "Date N/A"
     }
     
-    
-    
-    
-    
     // MARK: - Init Method
+    
     init(_ article: Article) {
         self.article = article
     }
