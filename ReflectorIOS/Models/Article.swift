@@ -24,7 +24,6 @@ import SwiftUI
  
  */
 
-
 /// This is an Article data model.
 struct Article: Identifiable {
     // MARK: - Properties
@@ -52,7 +51,11 @@ struct Article: Identifiable {
         case link = "link"
         case creator = "dc:creator"
     }
-    
+}
+
+// MARK: - Debugging
+
+extension Article {
     func debug_print() {
         print("==== ARTICLE DEBUG ====")
         print("Title: \(self.title ?? "NOT AVAILABLE")")
@@ -61,5 +64,4 @@ struct Article: Identifiable {
         print("Link: \(self.link ?? "NOT AVAILABLE")")
         print("Creator: \(self.creator ?? "NOT AVAILABLE")")
     }
-    
 }
