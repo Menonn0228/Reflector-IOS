@@ -3,25 +3,29 @@ Author: Nikhil Menon
 Created: Sometime around April 2020
 _______________________________________________________________________________________
 
-
-
 ## Rule of Thumb for Documenting Code
+
 1. __ALWAYS__ Document methods in your classes, and document what classes do.
 2. If you make spaghetti code that magically works and you don't know why, COMMENT that it works for some reason so that nobody messes with it.
-3. When using code from other sites or Youtube videos, Always comment the link so that othes developers can learn what you did. This may also help with plagarism.
+3. Avoid [magic numbers.](https://en.wikipedia.org/wiki/Magic_number_%28programming%29) 
+4. When using code from other sites or Youtube videos, Always comment the link so that othes developers can learn what you did. This may also help with plagarism.
+5. **Refer to the Swift Style Guide so your code doesn't look bad. Pull Requests will be declined if the style guide has not been met.**
+[Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
 
 _______________________________________________________________________________________
 
 ## When Creating New Files
 
-**SwiftUI View** files go into the **Views Folder.** You may sort the Views in the Views folders into subdirectories if it helps.
+**SwiftUI View** files go into the **Views Folder.** You may sort the Views in the Views folders into subdirectories for each kind of screen if it helps.
 
-**Swift Classes or Structs** that you make should all go into the **Models folder.**
+**Primary Swift Classes or Structs** that you make should all go into the **Models folder.**
 
 **ViewModels** are separate from models, and should be placed in the ViewModels Folder.
 
 Anything that *helps* you get your job done like a custom Formatter class or a Network Manager class can all go into the **Helpers folder**. These are different from the stuff
 in the models folder because the classes and structs in the models folder represent actual data.
+
+If you add extensions to a framework class, create a new file with the file name [ClassBeingExtended]+[ExtensionKind].swift and add it to the **Extensions Folder**
 
 _______________________________________________________________________________________
 
@@ -36,6 +40,7 @@ ________________________________________________________________________________
 
 
 _______________________________________________________________________________________
+
 ## MVVM Architecture
 This project is built off of an MVVM architecture. This means that you will see three types of files/classes.
 
@@ -48,18 +53,17 @@ The ViewModel essenpially represents ONLY what needs to be displayed in a view. 
 A **View** is literally what it sounds like. It's the actual interface that the user sees. In an MVVM architecture, the View objects and structs **Should Never** interact with the model data.
 For example, if the user taps on a button, the button tap should make the view ask the ViewModel to change the viewModel data. In return, whenever the ViewModel data is changed, the View itself should change accordingly
 to represent the ViewModel.
+
 _______________________________________________________________________________________
+
 ## Code Wiki
 Get quick information on important custom classes, extentions, etc. that may help you develop the project.
 
-
-
 ### RSSService
-~~This class no longer uses the  [Alamofire](https://github.com/Alamofire/Alamofire) dependency to make network requests to fetch RSS Feeds.~~
 
 This class uses SwiftUI's built-in URLSessions framework  to make network requests to fetch RSS Feeds.
 When fetching articles from an RSS feed, this class does the nitty gritty stuff for you.
-When you are wanting to actually *fetch* the data, all you have to do is call the methodts within the class.
+When you are wanting to actually *fetch* the data, all you have to do is call the methods within the class.
 
 RSSService is a **Singleton object**. This means only one instance needs to be created and it can then be accesses anywhere
 in the project. **Do not** create a new instance of RSSService. Just call  its `shared` property in order to use its methods.
@@ -70,14 +74,8 @@ Do this: `RSSService.shared.fetchNews()`
 
 **For more detailed information on how to use specific methods in this class, refer to the in-line documentation within the RSSService.swift file.**
 
-
 More information on Singleton [here](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/).
 
+### RSSService + Combine Framework
 
-
-
-
-
-
-
-
+RSSService now uses the Combine framework. To get familiar with Combine and what it does, I recommend watching the related [Apple Developer videos](https://developer.apple.com/wwdc19/722)
