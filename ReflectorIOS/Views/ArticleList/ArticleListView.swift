@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Combine
+
 /// This view will display the previews for each of the articles.
 /// A user can tap on a row from this list to be taken to the full article.
 struct ArticleListView: View {
@@ -23,8 +25,10 @@ struct ArticleListView: View {
     
     var body: some View {
         NavigationView {
-            myButton
-                .navigationBarTitle(ArticleListViewModel.reflectorTitle)
+            List(viewModel.articleViewModels, id: \.title) { vm in
+                Text(vm.title)
+            }
+            .navigationBarTitle(ArticleListViewModel.reflectorTitle)
         }
     }
 }

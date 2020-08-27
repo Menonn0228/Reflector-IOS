@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
 		EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSService.swift */; };
 		EA5B50D324396AB9003E8BFE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50D224396AB9003E8BFE /* Article.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
 		EA34254E243D3B0A00E32748 /* GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GUIDE.md; sourceTree = "<group>"; };
 		EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSService.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		EA10AD2F24C353D6001C337B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */,
+				EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */,
 				EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,

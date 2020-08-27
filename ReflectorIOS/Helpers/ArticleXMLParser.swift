@@ -37,6 +37,10 @@ final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
     
     /// parse takes in a type `Data` and will attempt to decode. This function will return a type `[Article]`
     func parse(data: Data) -> [Article] {
+        #if DEBUG
+        let dataString = String(data: data, encoding: .utf8)
+        debugPrint(dataString ?? "")
+        #endif
         let parser = XMLParser(data: data)
         parser.delegate = self
         self.object = Article()
