@@ -9,39 +9,23 @@
 import Foundation
 import Combine
 
-
-// MARK: - Protocols
-
-protocol ArticlePublishing {
-    func fetchArticlesPublisher(with category: RSSParameter.FeedCategory) -> AnyPublisher<[Article], URLSession.DataTaskPublisher.Failure>
-}
-
-// MARK: - Errors
-
-enum RSSServiceError: Error {
-    case noDataReturnedfromRSSFeed
-    case invalidURL
-    
-}
-
-// MARK: - Class
-
 /// RSSService utilizes Combine framework and URL Sessions to fetch RSS feeds from the reflector website
-class RSSService: NSObject {
+class RSSService {
+    /// shared Instance of RSSService.
     static let shared = RSSService()
 }
 
 // MARK: - ArticlePublishing
 
 extension RSSService: ArticlePublishing {
-    func fetchArticlesPublisher(with category: RSSParameter.FeedCategory) -> AnyPublisher<[Article], URLSession.DataTaskPublisher.Failure> {
+    
+    func fetchArticlesPublisher(with parameters: RSSParameter) -> AnyPublisher<[Article], URLSession.DataTaskPublisher.Failure> {
         var reflectorURLComponents = URLComponents.reflectorBaseComponents
-        let parameter = RSSParameter(t: .article, l: 50, c: category, f: .rss)
         
-        reflectorURLComponents.queryItems = parameter.parseAsQueryItems()
+        reflectorURLComponents.queryItems = parameters.parseAsQueryItems()
         
         let url = reflectorURLComponents.url!
-        print("Fetching to: \(url) in RSSService.fetchArticlesPublisher")
+        print("FETCHING FROM >>  \(url) << in RSSService.fetchArticlesPublisher\n")
         
         let publisher = URLSession.shared
             .dataTaskPublisher(for: url)
