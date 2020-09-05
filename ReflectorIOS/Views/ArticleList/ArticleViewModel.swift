@@ -15,7 +15,7 @@ import Foundation
 
 final class ArticleViewModel: ObservableObject {
     
-    private var article: Article
+    private(set) var article: Article
     
     // MARK: - Accessible Computed Properties
     

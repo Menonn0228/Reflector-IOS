@@ -26,7 +26,9 @@ struct ArticleListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.articleViewModels, id: \.title) { vm in
-                Text(vm.title)
+                NavigationLink(destination: ArticleContentView(viewModel: .init(model: vm.article))) {
+                    Text(vm.title)
+                }
             }
             .navigationBarTitle(ArticleListViewModel.reflectorTitle)
         }

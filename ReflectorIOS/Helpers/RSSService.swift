@@ -13,6 +13,8 @@ import Combine
 class RSSService {
     /// shared Instance of RSSService.
     static let shared = RSSService()
+    
+    private init() { }
 }
 
 // MARK: - ArticlePublishing
