@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import UIKit
+import SafariServices
 
 struct ArticleContentView: View {
     @ObservedObject
@@ -14,7 +16,10 @@ struct ArticleContentView: View {
     
     
     var body: some View {
-        WKView(request: viewModel.htmlContentRequest!)
+        SFSafariWebView(url: viewModel.htmlContentURL!)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarTitle(CommonStrings.reflectorTitle, displayMode: .inline)
+            .navigationBarHidden(true)
     }
 }
 

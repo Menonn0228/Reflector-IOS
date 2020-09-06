@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
+		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
 		EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSService.swift */; };
@@ -28,6 +29,7 @@
 		EA621206244AA2AD00DC85C8 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListViewModel.swift */; };
 		EA621207244AA2AE00DC85C8 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListViewModel.swift */; };
 		EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */; };
+		EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A21232505610E0001D089 /* CommonStrings.swift */; };
 		EA8F28B624452B96005E23C4 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListViewModel.swift */; };
 		EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD675A24C3BB640081A750 /* ContentView.swift */; };
 		EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D124395A9500B399E0 /* AppDelegate.swift */; };
@@ -63,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
+		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
 		EA34254E243D3B0A00E32748 /* GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GUIDE.md; sourceTree = "<group>"; };
 		EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EA6211FC244AA28800DC85C8 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParameter.swift; sourceTree = "<group>"; };
+		EA8A21232505610E0001D089 /* CommonStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStrings.swift; sourceTree = "<group>"; };
 		EA8F28B524452B96005E23C4 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
 		EAAD675A24C3BB640081A750 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EACD73CE24395A9500B399E0 /* ReflectorIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectorIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,7 @@
 				EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */,
 				EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */,
 				EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */,
+				EA8A21232505610E0001D089 /* CommonStrings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				EAE73D872504551900AFDE7D /* WKView.swift */,
 				EAE73D8B250456CD00AFDE7D /* ArticleContentViewModel.swift */,
 				EAE73D89250456A800AFDE7D /* ArticleContentView.swift */,
+				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
 			);
 			path = ArticleContent;
 			sourceTree = "<group>";
@@ -400,11 +406,13 @@
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA6211FD244AA28800DC85C8 /* ArticleViewModel.swift in Sources */,
+				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
 				EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */,
 				EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */,
+				EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */,
 				EA8F28B624452B96005E23C4 /* ArticleListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
