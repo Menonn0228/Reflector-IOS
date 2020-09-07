@@ -14,7 +14,6 @@ struct ArticleContentView: View {
     @ObservedObject
     private(set) var viewModel: ArticleContentViewModel
     
-    
     var body: some View {
         SFSafariWebView(url: viewModel.htmlContentURL!)
             .edgesIgnoringSafeArea(.all)
