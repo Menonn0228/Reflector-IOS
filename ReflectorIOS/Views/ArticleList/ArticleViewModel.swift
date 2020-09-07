@@ -8,10 +8,8 @@
 
 import Foundation
 
-
 // ArticleViewModel is the viewmodel for the article cell when you see a list of Articles.
 // You know the individual cells with different articles you can tap on? That's what this viewmodel is for... is the cells.
-
 
 final class ArticleViewModel: ObservableObject {
     
@@ -42,6 +40,4 @@ final class ArticleViewModel: ObservableObject {
     init(_ article: Article) {
         self.article = article
     }
-    
-    
 }

@@ -11,6 +11,7 @@ import SwiftUI
 
 class ArticleContentViewModel: ObservableObject {
     private(set) var article: Article
+    private(set) var appTitle = CommonStrings.reflectorTitle
     
     var articleHasContent: Bool {
         return htmlContentURL != nil

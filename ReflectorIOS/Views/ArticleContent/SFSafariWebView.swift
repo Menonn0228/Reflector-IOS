@@ -25,16 +25,31 @@ struct SFSafariWebView: UIViewControllerRepresentable {
     }
 }
 
-
 // MARK: - Coordinator
 
 extension SFSafariWebView {
-    class Coordinator: NSObject, SFSafariViewControllerDelegate, UINavigationControllerDelegate { }
+    class Coordinator: NSObject {
+        private(set) var parent: SFSafariWebView
+        
+        init(_ parent: SFSafariWebView) {
+            self.parent = parent
+        }
+    }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(self)
     }
 }
+
+// MARK: - SFSafariViewControllerDelegate
+
+extension SFSafariWebView.Coordinator: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        parent.presentationMode.wrappedValue.dismiss()
+    }
+}
+
+// MARK: - Preview
 
 struct SFSafariViewControllerRepresentable_Previews: PreviewProvider {
     static var previews: some View {

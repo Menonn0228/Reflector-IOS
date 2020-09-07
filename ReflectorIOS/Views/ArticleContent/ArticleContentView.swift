@@ -18,7 +18,7 @@ struct ArticleContentView: View {
     var body: some View {
         SFSafariWebView(url: viewModel.htmlContentURL!)
             .edgesIgnoringSafeArea(.all)
-            .navigationBarTitle(CommonStrings.reflectorTitle, displayMode: .inline)
+            .navigationBarTitle(Text(viewModel.appTitle), displayMode: .inline)
             .navigationBarHidden(true)
     }
 }

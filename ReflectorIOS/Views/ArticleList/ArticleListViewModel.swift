@@ -15,7 +15,7 @@ final class ArticleListViewModel: ObservableObject {
     
     // MARK: - Statics
     
-    static let reflectorTitle: String = CommonStrings.reflectorTitle
+    static let reflectorTitle = CommonStrings.reflectorTitle
     static var date: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
