@@ -17,7 +17,7 @@ struct ContentView: View {
         #if os(iOS)
         if horizontalSizeClass == .compact {
             ArticleListView()
-                .environmentObject(ArticleListViewModel())
+                .environmentObject(ArticleListStore())
         } else {
             fatalError("Must Create an AppSideBarNavigationView")
         }
