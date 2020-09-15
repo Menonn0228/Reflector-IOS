@@ -14,6 +14,14 @@ import Combine
 struct ArticleListView: View {
     /// Used Store object is used to retrieve remote articles
     @ObservedObject var store: ArticleListStore = .init()
+    init(){
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 0.50, green: 0.00,blue: 0.00, alpha: 1.00)
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
+        
+       }
+    
     
     var body: some View {
         NavigationView {
@@ -24,7 +32,14 @@ struct ArticleListView: View {
             }
             .navigationBarTitle(CommonStrings.reflectorTitle)
         }
+        
     }
+    
+    
+    
+    
+        
+    
 }
 
 // MARK: - Preview

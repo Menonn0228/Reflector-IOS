@@ -13,4 +13,8 @@ import SwiftUI
 
 enum CommonStrings {
     static let reflectorTitle = "The Reflector"
+    
+    
 }
+
+
