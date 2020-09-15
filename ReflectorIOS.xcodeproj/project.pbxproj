@@ -13,6 +13,7 @@
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
 		EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA4D9F18251044AE001E200C /* UINavigationController+Maroon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D9F17251044AE001E200C /* UINavigationController+Maroon.swift */; };
+		EA4D9F1A25104A26001E200C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D9F1925104A26001E200C /* Theme.swift */; };
 		EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50CE2439684E003E8BFE /* RSSService.swift */; };
 		EA5B50D324396AB9003E8BFE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50D224396AB9003E8BFE /* Article.swift */; };
 		EA5B50D424396AB9003E8BFE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5B50D224396AB9003E8BFE /* Article.swift */; };
@@ -68,6 +69,7 @@
 		EA34254E243D3B0A00E32748 /* GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GUIDE.md; sourceTree = "<group>"; };
 		EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
 		EA4D9F17251044AE001E200C /* UINavigationController+Maroon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Maroon.swift"; sourceTree = "<group>"; };
+		EA4D9F1925104A26001E200C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSService.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParameter.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */,
 				EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */,
 				EA8A21232505610E0001D089 /* CommonStrings.swift */,
+				EA4D9F1925104A26001E200C /* Theme.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
+				EA4D9F1A25104A26001E200C /* Theme.swift in Sources */,
 				EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */,
 				E95DA699250FC19900C47E51 /* Product.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
