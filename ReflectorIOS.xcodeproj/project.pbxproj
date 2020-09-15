@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E95DA69B2510655800C47E51 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95DA69A2510655800C47E51 /* TabBar.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
@@ -62,7 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E95DA69A2510655800C47E51 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */,
-				E95DA69A2510655800C47E51 /* TabBar.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -411,7 +408,6 @@
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
-				E95DA69B2510655800C47E51 /* TabBar.swift in Sources */,
 				EA4D9F1A25104A26001E200C /* Theme.swift in Sources */,
 				EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,

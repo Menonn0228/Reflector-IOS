@@ -17,7 +17,7 @@ struct ArticleListView: View {
     @ObservedObject var store: ArticleListStore = .init()
     
     var body: some View {
-        TabView {
+
             
         NavigationView {
             List(store.articles, id: \.title) { article in
@@ -27,31 +27,8 @@ struct ArticleListView: View {
             }
             .navigationBarTitle(Text(CommonStrings.reflectorTitle))
         }
-            Text("Tab 1")
-            .onTapGesture {
-                self.selectedTab = 1
-            }
-            .tabItem {
-                Image(systemName: "star.fill")
-                Text("Home")
-            }
-            .tag(0)
             
-            Text("Tab 2")
-            .tabItem {
-                Image(systemName: "star.fill")
-                Text("Saved")
-            }
-            .tag(1)
-            
-            Text("Tab 3")
-            .tabItem {
-                Image(systemName: "star.fill")
-                Text("Category")
-            }
-            .tag(1)
-            
-    }
+    
 }
     
 }
@@ -59,6 +36,7 @@ struct ArticleListView: View {
 // MARK: - Preview
 
 struct ArticleListView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ArticleListView()
     }
