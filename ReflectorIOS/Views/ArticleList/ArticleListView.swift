@@ -22,7 +22,15 @@ struct ArticleListView: View {
         NavigationView {
             List(store.articles, id: \.title) { article in
                 NavigationLink(destination: ArticleContentView(model: article)) {
+                    HStack {
                     Text(article.title ?? "")
+                    
+                    VStack(alignment: .leading) {
+                    Text(article.creator ?? "")
+                    Text(article.pubDate ?? "")
+                    Text(article.details ?? "")
+                    }
+                    }
                 }
             }
             .navigationBarTitle(Text(CommonStrings.reflectorTitle))
