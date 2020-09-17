@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B4E442513E42E0043E91B /* ArticleCell.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E95B4E442513E42E0043E91B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */,
+				E95B4E442513E42E0043E91B /* ArticleCell.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */,
+				E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */,
 				EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */,
 				EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */,
 				EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */,
