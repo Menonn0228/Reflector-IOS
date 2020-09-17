@@ -7,26 +7,26 @@
 //
 
 import SwiftUI
-
+fileprivate enum CellConstants {
+    static let titleSize: CGFloat = 20
+    static let lineLimit = 3
+    static let detailSize: CGFloat = 15
+}
 struct ArticleCell: View {
     private(set) var article: Article
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(article.title ?? "")
-                .font(.system(size: 20, weight: Font.Weight.bold))
+                .font(.system(size: CellConstants.titleSize, weight: Font.Weight.bold))
                 .foregroundColor(Color(Theme.reflectorMaroon!))
-            
             Text(article.details ?? "")
-                .lineLimit(3)
-                .font(.system(size: 15))
+                .lineLimit(CellConstants.lineLimit)
+                .font(.system(size: CellConstants.detailSize))
                 .padding(.bottom)
-            
-            
             HStack {
                 Text(article.creator ?? "")
                 Text(article.pubDate ?? "")
-                
             }
         }
     }

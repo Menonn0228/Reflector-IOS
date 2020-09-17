@@ -16,10 +16,8 @@ struct ArticleListView: View {
     /// Used Store object is used to retrieve remote articles
     @ObservedObject var store: ArticleListStore = .init()
     
-
     var body: some View {
-
-            
+        
         NavigationView {
             List(store.articles, id: \.title) { article in
                 NavigationLink(destination: ArticleContentView(model: article)) {
@@ -29,10 +27,7 @@ struct ArticleListView: View {
             }
             .navigationBarTitle(Text(CommonStrings.reflectorTitle))
         }
-            
-    
-}
-    
+    }
 }
 
 // MARK: - Preview
