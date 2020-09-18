@@ -20,6 +20,9 @@ struct ArticleListView: View {
             List(store.articles, id: \.title) { article in
                 NavigationLink(destination: ArticleContentView(model: article)) {
                     Text(article.title ?? "")
+                        .onAppear {
+                            store.fetchMoreArticles(after: article)
+                        }
                 }
             }
             .navigationBarTitle(CommonStrings.reflectorTitle)

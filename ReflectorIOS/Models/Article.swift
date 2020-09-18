@@ -65,3 +65,11 @@ extension Article {
         print("Creator: \(self.creator ?? "NOT AVAILABLE")")
     }
 }
+
+// MARK: - Equatable
+
+extension Article: Equatable {
+    static func == (lhs: Article, rhs: Article) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

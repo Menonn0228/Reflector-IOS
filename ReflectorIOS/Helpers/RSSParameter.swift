@@ -15,10 +15,13 @@ struct RSSParameter {
     
     /// The type category. In most cases, this will be type `article `
     /// This is `t` in the rss parameter
-    private(set) var itemType: TypeCategory?
+    private(set) var itemType: TypeCategory? = .article
     /// The number of elements to retrieve
     /// This is `l` in the rss parameter
-    private(set) var numItems: Int?
+    private(set) var numItems: Int? = 10
+    /// Number of results to skip before producing articles.
+    /// This is used to paginate articles and create an infinite scrolling effect.
+    private(set) var offset: Int? = 0
     /// The type of articles we want to get. For example, `news`
     /// This is `c[]` in the rss parameter
     private(set) var category: FeedCategory?
@@ -75,6 +78,10 @@ extension RSSParameter {
         
         if let numberItems = numItems {
             queryItems.append(.init(name: "l", value: String(numberItems)))
+        }
+        
+        if let offset = offset {
+            queryItems.append(.init(name: "o", value: String(offset)))
         }
         
         if let feedCategory = category {
