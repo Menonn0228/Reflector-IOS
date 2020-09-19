@@ -13,9 +13,9 @@ import Combine
 
 
 /// Initial number of elements to retrieve
-fileprivate let initialLimit: Int = 15
+fileprivate let initialLimit: Int = 20
 /// Number of elements to retrieve additional articles
-fileprivate let additionalLimit: Int = 7
+fileprivate let additionalLimit: Int = 10
 
 /// This is the ViewModel for the ArticleListView
 final class ArticleListStore: ObservableObject {
@@ -79,15 +79,17 @@ extension ArticleListStore {
     /// - Returns: Boolean that determines if more articles need to be fetched.
     private func shouldLoadMoreArticles(after article: Article?) -> Bool {
         
+        // When the user passes this article, we should trigger a fetch.
+        let triggerArticle = articles.last
+        
         guard let article = article else {
             return true
         }
         
-        if articles.isEmpty || articles.last == article {
+        if articles.isEmpty || triggerArticle == article {
             return true
         }
         
         return false
     }
-    
 }

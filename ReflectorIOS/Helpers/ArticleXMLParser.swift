@@ -16,7 +16,7 @@ protocol Parser {
 }
 
 /// Parses the XML Articles that are retrieved from RSSService.
-final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
+final class ArticleXMLParser: NSObject {
     private var objects: [Article]
     private var object: Article!
     private var currentContent: String = String()
@@ -32,9 +32,25 @@ final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
         self.objects = []
         super.init()
     }
-    
-    // MARK: - Parse Method
-    
+}
+
+// MARK: - Tags
+
+extension ArticleXMLParser {
+    /// The tags that identify an Article in an RSS feed. This is used in the XMLHelper class.
+    private enum Tags: String {
+        case item = "item"
+        case title = "title"
+        case description = "description"
+        case pubDate = "pubDate"
+        case link = "link"
+        case creator = "dc:creator"
+    }
+}
+
+// MARK: - Parse Method
+
+extension ArticleXMLParser: Parser, XMLParserDelegate {
     /// parse takes in a type `Data` and will attempt to decode. This function will return a type `[Article]`
     func parse(data: Data) -> [Article] {
         let parser = XMLParser(data: data)
@@ -59,7 +75,7 @@ final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         switch elementName {
-        case Article.tags.item.rawValue:
+        case Tags.item.rawValue:
             object = Article()
             self.currentContent = ""
             break
@@ -78,23 +94,23 @@ final class ArticleXMLParser: NSObject, Parser, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
         switch elementName {
-            
-        case Article.tags.item.rawValue:
+        
+        case Tags.item.rawValue:
             objects.append(object)
             break
-        case Article.tags.title.rawValue:
+        case Tags.title.rawValue:
             object.title = currentContent
             break
-        case Article.tags.description.rawValue:
+        case Tags.description.rawValue:
             object.details = currentContent
             break
-        case Article.tags.pubDate.rawValue:
+        case Tags.pubDate.rawValue:
             object.pubDate = currentContent
             break
-        case Article.tags.link.rawValue:
+        case Tags.link.rawValue:
             object.link = currentContent
             break
-        case Article.tags.creator.rawValue:
+        case Tags.creator.rawValue:
             object.creator = currentContent
             break
             
