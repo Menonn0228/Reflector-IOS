@@ -21,13 +21,8 @@ final class ArticleXMLParser: NSObject {
     private var object: Article!
     private var currentContent: String = String()
     
-    enum XMLHelperError: Error {
-        case invalidDataInput
-    }
+    // MARK: - Init
     
-    public var data: Data!
-    
-    // MARK: - Init Method
     override required init() {
         self.objects = []
         super.init()
@@ -69,9 +64,7 @@ extension ArticleXMLParser: Parser, XMLParserDelegate {
     // These methods should not be tampered with.
     // Sauce: https://makeapppie.com/2016/06/06/how-to-read-xml-files-from-the-web-in-swift/
     
-    func parserDidStartDocument(_ parser: XMLParser) {
-        print("Starting to Parse")
-    }
+    func parserDidStartDocument(_ parser: XMLParser) { }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         switch elementName {
@@ -83,8 +76,6 @@ extension ArticleXMLParser: Parser, XMLParserDelegate {
         default:
             self.currentContent = ""
         }
-        
-        
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {

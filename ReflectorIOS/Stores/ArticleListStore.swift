@@ -13,9 +13,11 @@ import Combine
 
 
 /// Initial number of elements to retrieve
-fileprivate let initialLimit: Int = 20
+fileprivate let initialLimit: Int = 25
 /// Number of elements to retrieve additional articles
-fileprivate let additionalLimit: Int = 10
+fileprivate let additionalLimit: Int = 50
+/// Represents how early we need to trigger `fetchArticles`
+fileprivate let triggerIndexOffset: Int = 12
 
 /// This is the ViewModel for the ArticleListView
 final class ArticleListStore: ObservableObject {
@@ -66,13 +68,12 @@ extension ArticleListStore {
     
     final func fetchMoreArticles(after article: Article? = nil) {
         
-        if shouldLoadMoreArticles(after: article) {
-            fetchArticles()
-        } else {
-            print ("DO NOT FETCH MORE ARTICLES")
+        guard shouldLoadMoreArticles(after: article) else {
+            return
         }
+        
+        fetchArticles()
     }
-    
     
     /// Returns a boolean value on weather or not the store should fetch more articles
     /// - Parameter article: Return articles after the given article
@@ -80,13 +81,13 @@ extension ArticleListStore {
     private func shouldLoadMoreArticles(after article: Article?) -> Bool {
         
         // When the user passes this article, we should trigger a fetch.
-        let triggerArticle = articles.last
+        let triggerArticle = articles[articles.count - triggerIndexOffset]
         
         guard let article = article else {
             return true
         }
         
-        if articles.isEmpty || triggerArticle == article {
+        if articles.isEmpty || article == triggerArticle {
             return true
         }
         
