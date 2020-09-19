@@ -10,8 +10,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-
-
 /// Initial number of elements to retrieve
 fileprivate let initialLimit: Int = 25
 /// Number of elements to retrieve additional articles
