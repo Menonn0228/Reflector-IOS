@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 /// Contains custom colors  as `UIColor` used in the app.
 enum Theme {
-    static let reflectorMaroon = UIColor(named: "reflector-maroon")
+    static let reflectorMaroon = UIColor(named: "reflector-maroon")!
 }

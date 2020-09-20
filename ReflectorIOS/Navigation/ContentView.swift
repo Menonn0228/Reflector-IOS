@@ -15,7 +15,6 @@ struct ContentView: View {
     
     @ViewBuilder var body: some View {
     
-        
         #if os(iOS)
         if horizontalSizeClass == .compact {
             TabView {
@@ -36,10 +35,7 @@ struct ContentView: View {
                     Image(systemName: "star.fill")
                     Text("Categories")
                 }
-                
-            
             }
-            
         } else {
             fatalError("Must Create an AppSideBarNavigationView")
         }
@@ -47,11 +43,7 @@ struct ContentView: View {
         fatalError("Must Create an AppSideBarNavigationView")
         #endif
     }
-        
-
-    
 }
-
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {

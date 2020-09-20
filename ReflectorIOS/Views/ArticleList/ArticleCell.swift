@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+
 fileprivate enum CellConstants {
     static let titleSize: CGFloat = 20
     static let lineLimit = 3
@@ -19,7 +20,7 @@ struct ArticleCell: View {
         VStack(alignment: .leading) {
             Text(article.title ?? "")
                 .font(.system(size: CellConstants.titleSize, weight: Font.Weight.bold))
-                .foregroundColor(Color(Theme.reflectorMaroon!))
+                .foregroundColor(Color(Theme.reflectorMaroon))
             Text(article.details ?? "")
                 .lineLimit(CellConstants.lineLimit)
                 .font(.system(size: CellConstants.detailSize))
