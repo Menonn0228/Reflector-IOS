@@ -14,10 +14,28 @@ struct ContentView: View {
     #endif
     
     @ViewBuilder var body: some View {
+    
         #if os(iOS)
         if horizontalSizeClass == .compact {
-            ArticleListView()
-                .environmentObject(ArticleListStore())
+            TabView {
+                ArticleListView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Home")
+                }
+                
+                ArticleListView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Saved")
+                }
+                
+                ArticleListView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Categories")
+                }
+            }
         } else {
             fatalError("Must Create an AppSideBarNavigationView")
         }
@@ -26,8 +44,8 @@ struct ContentView: View {
         #endif
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }
