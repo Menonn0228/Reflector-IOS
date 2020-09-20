@@ -41,16 +41,6 @@ struct Article: Identifiable {
     var link: String?
     /// author of the articles
     var creator: String?
-    
-    /// The tags that identify an Article in an RSS feed. This is used in the XMLHelper class.
-    enum tags: String {
-        case item = "item"
-        case title = "title"
-        case description = "description"
-        case pubDate = "pubDate"
-        case link = "link"
-        case creator = "dc:creator"
-    }
 }
 
 // MARK: - Debugging
@@ -63,5 +53,13 @@ extension Article {
         print("Date Published: \(self.pubDate ?? "NOT AVAILABLE")")
         print("Link: \(self.link ?? "NOT AVAILABLE")")
         print("Creator: \(self.creator ?? "NOT AVAILABLE")")
+    }
+}
+
+// MARK: - Equatable
+
+extension Article: Equatable {
+    static func == (lhs: Article, rhs: Article) -> Bool {
+        return lhs.id == rhs.id
     }
 }

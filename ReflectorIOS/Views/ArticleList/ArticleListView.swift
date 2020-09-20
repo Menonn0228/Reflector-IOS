@@ -22,7 +22,9 @@ struct ArticleListView: View {
             List(store.articles, id: \.title) { article in
                 NavigationLink(destination: ArticleContentView(model: article)) {
                     ArticleCell(article: article)
-                    
+                        .onAppear {
+                            store.fetchMoreArticles(after: article)
+                        }
                 }
             }
             .navigationBarTitle(Text(CommonStrings.reflectorTitle))
