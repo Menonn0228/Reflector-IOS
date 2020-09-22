@@ -27,14 +27,31 @@ struct ArticleCell: View {
                 .padding(.bottom)
             HStack {
                 Text(article.creator ?? "")
-                Text(article.pubDate ?? "")
+                Spacer()
+                Text(formatDate(article.pubDate))
             }
         }
     }
 }
 
+// MARK: - Formatting
+
+extension ArticleCell {
+    private func formatDate(_ date: Date?) -> String {
+        guard let pubDate = date else {
+            return ""
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: pubDate)
+    }
+}
+
+// MARK: - Preview
+
 struct ArticleCell_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleCell(article: .init(title: "a", details: "b", pubDate: "c", link: "d", creator: "e"))
+        ArticleCell(article: .init(title: "a", details: "b", pubDate: Date(), link: "d", creator: "e"))
     }
 }

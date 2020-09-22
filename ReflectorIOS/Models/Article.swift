@@ -36,7 +36,7 @@ struct Article: Identifiable {
     /// This is  the short description of the article
     var details: String?
     /// Publish date
-    var pubDate: String?
+    var pubDate: Date?
     /// Link to full HTML article
     var link: String?
     /// author of the articles
@@ -48,11 +48,11 @@ struct Article: Identifiable {
 extension Article {
     func debug_print() {
         print("==== ARTICLE DEBUG ====")
-        print("Title: \(self.title ?? "NOT AVAILABLE")")
-        print("Desc: \(self.details ?? "NOT AVAILABLE")")
-        print("Date Published: \(self.pubDate ?? "NOT AVAILABLE")")
-        print("Link: \(self.link ?? "NOT AVAILABLE")")
-        print("Creator: \(self.creator ?? "NOT AVAILABLE")")
+        print("Title: \(title ?? "NOT AVAILABLE")")
+        print("Desc: \(details ?? "NOT AVAILABLE")")
+        print("Date Published: \(String(describing: pubDate))")
+        print("Link: \(link ?? "NOT AVAILABLE")")
+        print("Creator: \(creator ?? "NOT AVAILABLE")")
     }
 }
 
