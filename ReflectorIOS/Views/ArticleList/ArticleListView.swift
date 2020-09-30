@@ -15,7 +15,6 @@ struct ArticleListView: View {
     @State private var selectedTab = 0
     /// Used Store object is used to retrieve remote articles
     @ObservedObject var store: ArticleListStore = .init()
-    
     var body: some View {
         
         NavigationView {

@@ -9,32 +9,58 @@
 import SwiftUI
 
 fileprivate enum CellConstants {
-    static let titleSize: CGFloat = 20
+    static let titleFontSize: CGFloat = 20
+    static let detailFontSize: CGFloat = 15
+    static let authorAndDateFontSize: CGFloat = 13
     static let lineLimit = 3
-    static let detailSize: CGFloat = 15
 }
+
 struct ArticleCell: View {
     private(set) var article: Article
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(article.title ?? "")
-                .font(.system(size: CellConstants.titleSize, weight: Font.Weight.bold))
-                .foregroundColor(Color(Theme.reflectorMaroon))
+                .font(.system(size: CellConstants.titleFontSize, weight: Font.Weight.bold))
+                .foregroundColor(colorScheme == .light ? Color(Theme.reflectorMaroon) : Color(.white))
+            
             Text(article.details ?? "")
                 .lineLimit(CellConstants.lineLimit)
-                .font(.system(size: CellConstants.detailSize))
+                .font(.system(size: CellConstants.detailFontSize))
+                .foregroundColor(.secondary)
                 .padding(.bottom)
+            
             HStack {
                 Text(article.creator ?? "")
-                Text(article.pubDate ?? "")
+                Spacer()
+                Text(formatDate(article.pubDate))
             }
+            .foregroundColor(.secondary)
+            .font(.system(size: CellConstants.authorAndDateFontSize))
         }
     }
 }
 
+// MARK: - Formatting
+
+extension ArticleCell {
+    private func formatDate(_ date: Date?) -> String {
+        guard let pubDate = date else {
+            return ""
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: pubDate)
+    }
+}
+
+// MARK: - Preview
+
 struct ArticleCell_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleCell(article: .init(title: "a", details: "b", pubDate: "c", link: "d", creator: "e"))
+        ArticleCell(article: .init(title: "a", details: "b", pubDate: Date(), link: "d", creator: "e"))
     }
 }

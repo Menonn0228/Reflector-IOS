@@ -21,6 +21,13 @@ final class ArticleXMLParser: NSObject {
     private var object: Article!
     private var currentContent: String = String()
     
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+        formatter.timeZone = .current
+        return formatter
+    }
+    
     // MARK: - Init
     
     override required init() {
@@ -96,7 +103,7 @@ extension ArticleXMLParser: Parser, XMLParserDelegate {
             object.details = currentContent
             break
         case Tags.pubDate.rawValue:
-            object.pubDate = currentContent
+            object.pubDate = dateFormatter.date(from: currentContent)
             break
         case Tags.link.rawValue:
             object.link = currentContent

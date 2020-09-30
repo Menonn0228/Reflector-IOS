@@ -24,13 +24,13 @@ struct ContentView: View {
                     Text("Home")
                 }
                 
-                ArticleListView()
+                Text("Saved Feature Coming Soon")
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Saved")
                 }
                 
-                ArticleListView()
+                Text("Category Section Coming Soon")
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Categories")
