@@ -17,7 +17,7 @@ struct ArticleListView: View {
     @ObservedObject var store: ArticleListStore = .init()
     
     var body: some View {
-        
+      
         NavigationView {
             List(store.articles, id: \.title) { article in
                 NavigationLink(destination: ArticleContentView(model: article)) {

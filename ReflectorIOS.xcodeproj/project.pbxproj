@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B4E442513E42E0043E91B /* ArticleCell.swift */; };
+		E9AD961F2524D6B900F06704 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AD961E2524D6B900F06704 /* HostingController.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		E95B4E442513E42E0043E91B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		E9AD961E2524D6B900F06704 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				EAE73D89250456A800AFDE7D /* ArticleContentView.swift */,
 				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
+				E9AD961E2524D6B900F06704 /* HostingController.swift */,
 			);
 			path = ArticleContent;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				EA4D9F1A25104A26001E200C /* Theme.swift in Sources */,
 				EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
+				E9AD961F2524D6B900F06704 /* HostingController.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */,
 				E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */,
