@@ -13,8 +13,9 @@ enum Theme: String {
     case reflectorMaroon = "reflector-maroon"
 }
 
+// MARK: - Colorable
 
-extension Theme: ColorRepresentable {
+extension Theme: Colorable {
     var asUIColor: UIColor {
         return UIColor(named: self.rawValue)!
     }

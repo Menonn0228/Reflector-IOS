@@ -12,6 +12,9 @@ struct AppTabNavigation: View {
     
     @ViewBuilder
     var body: some View {
+        
+        // Each tab item has its own NavigationView that will contain the screens we want to show.
+        
         TabView {
             
             NavigationView { ArticleListView() }

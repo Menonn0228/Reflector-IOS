@@ -48,7 +48,7 @@ struct AppSideBarNavigation: View {
     @ViewBuilder
     var body: some View {
         NavigationView {
-            // SwiftUI and iOS 13+ are  smart enough to show the two views
+            // SwiftUI and iOS 13+ are  smart enough to show the two views at once
             // if the user taps something on the sidebar.
             sidebar
         }

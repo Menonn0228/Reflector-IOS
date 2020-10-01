@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 /// Requires that the conforming type has a property that can be used to get an associated `UIImage`
 protocol UIImageRepresentable {
     var asUIImage: UIImage { get }
