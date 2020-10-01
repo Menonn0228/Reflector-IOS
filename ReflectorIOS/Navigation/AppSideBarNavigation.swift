@@ -42,7 +42,7 @@ struct AppSideBarNavigation: View {
                 }
             }
         }
-        .accentColor(Theme.reflectorMaroon.asColor)
+        .accentColor(Color.reflectorMaroon)
     }
     
     @ViewBuilder

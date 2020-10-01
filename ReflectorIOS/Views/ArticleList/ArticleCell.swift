@@ -24,7 +24,7 @@ struct ArticleCell: View {
         VStack(alignment: .leading) {
             Text(article.title ?? "")
                 .font(.system(size: CellConstants.titleFontSize, weight: Font.Weight.bold))
-                .foregroundColor(colorScheme == .light ? Theme.reflectorMaroon.asColor : Color(.white))
+                .foregroundColor(colorScheme == .light ? Color.reflectorMaroon : Color(.white))
             
             Text(article.details ?? "")
                 .lineLimit(CellConstants.lineLimit)
