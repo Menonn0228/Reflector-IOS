@@ -40,6 +40,12 @@
 		EACD73E124395A9A00B399E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACD73DF24395A9A00B399E0 /* LaunchScreen.storyboard */; };
 		EACD73EC24395A9B00B399E0 /* ReflectorIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73EB24395A9B00B399E0 /* ReflectorIOSTests.swift */; };
 		EACD73F724395A9B00B399E0 /* ReflectorIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73F624395A9B00B399E0 /* ReflectorIOSUITests.swift */; };
+		EAD448BC2525510700576CA2 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448BB2525510700576CA2 /* SelectCategoryView.swift */; };
+		EAD448D625255B3A00576CA2 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448D525255B3A00576CA2 /* AppTabNavigation.swift */; };
+		EAD448DB25255B4400576CA2 /* AppSideBarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448DA25255B4400576CA2 /* AppSideBarNavigation.swift */; };
+		EAD448E325255D4800576CA2 /* SFSymbolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448E225255D4800576CA2 /* SFSymbolFactory.swift */; };
+		EAD448EB252562F900576CA2 /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448EA252562F900576CA2 /* ImageRepresentable.swift */; };
+		EAD448F025256CBB00576CA2 /* ColorRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD448EF25256CBB00576CA2 /* ColorRepresentable.swift */; };
 		EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE73D89250456A800AFDE7D /* ArticleContentView.swift */; };
 		EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +96,12 @@
 		EACD73F224395A9B00B399E0 /* ReflectorIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectorIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACD73F624395A9B00B399E0 /* ReflectorIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectorIOSUITests.swift; sourceTree = "<group>"; };
 		EACD73F824395A9B00B399E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD448BB2525510700576CA2 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
+		EAD448D525255B3A00576CA2 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
+		EAD448DA25255B4400576CA2 /* AppSideBarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSideBarNavigation.swift; sourceTree = "<group>"; };
+		EAD448E225255D4800576CA2 /* SFSymbolFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolFactory.swift; sourceTree = "<group>"; };
+		EAD448EA252562F900576CA2 /* ImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
+		EAD448EF25256CBB00576CA2 /* ColorRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRepresentable.swift; sourceTree = "<group>"; };
 		EAE73D89250456A800AFDE7D /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
 		EAEBCF0C243D55E700141FC0 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,9 +168,10 @@
 		EA5B50DA24396AEE003E8BFE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EAD448E9252562E300576CA2 /* Protocols */,
 				EA5B50CE2439684E003E8BFE /* RSSService.swift */,
-				EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */,
 				EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */,
+				EAD448E225255D4800576CA2 /* SFSymbolFactory.swift */,
 				EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */,
 				EA8A21232505610E0001D089 /* CommonStrings.swift */,
 				EA4D9F1925104A26001E200C /* Theme.swift */,
@@ -178,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				EAAD675A24C3BB640081A750 /* ContentView.swift */,
+				EAD448DA25255B4400576CA2 /* AppSideBarNavigation.swift */,
+				EAD448D525255B3A00576CA2 /* AppTabNavigation.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -249,6 +264,24 @@
 			path = ReflectorIOSUITests;
 			sourceTree = "<group>";
 		};
+		EAD448BA252550F400576CA2 /* CategorySelection */ = {
+			isa = PBXGroup;
+			children = (
+				EAD448BB2525510700576CA2 /* SelectCategoryView.swift */,
+			);
+			path = CategorySelection;
+			sourceTree = "<group>";
+		};
+		EAD448E9252562E300576CA2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */,
+				EAD448EA252562F900576CA2 /* ImageRepresentable.swift */,
+				EAD448EF25256CBB00576CA2 /* ColorRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EAE73D862504551900AFDE7D /* ArticleContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +294,7 @@
 		EAEBCF0B243D55AC00141FC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EAD448BA252550F400576CA2 /* CategorySelection */,
 				EAE73D862504551900AFDE7D /* ArticleContent */,
 				EA10AD2C24C35015001C337B /* ArticleList */,
 			);
@@ -403,22 +437,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */,
+				EAD448E325255D4800576CA2 /* SFSymbolFactory.swift in Sources */,
 				EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */,
 				EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */,
 				EA4D9F18251044AE001E200C /* UINavigationController+Maroon.swift in Sources */,
+				EAD448DB25255B4400576CA2 /* AppSideBarNavigation.swift in Sources */,
 				EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */,
+				EAD448BC2525510700576CA2 /* SelectCategoryView.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
+				EAD448EB252562F900576CA2 /* ImageRepresentable.swift in Sources */,
 				EA4D9F1A25104A26001E200C /* Theme.swift in Sources */,
 				EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */,
 				EAEBCF0D243D55E700141FC0 /* ArticleListView.swift in Sources */,
 				EA5B50D324396AB9003E8BFE /* Article.swift in Sources */,
+				EAD448D625255B3A00576CA2 /* AppTabNavigation.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */,
 				E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */,
 				EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */,
 				EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */,
+				EAD448F025256CBB00576CA2 /* ColorRepresentable.swift in Sources */,
 				EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

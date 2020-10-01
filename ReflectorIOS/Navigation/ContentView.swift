@@ -14,30 +14,12 @@ struct ContentView: View {
     #endif
     
     @ViewBuilder var body: some View {
-    
+        
         #if os(iOS)
         if horizontalSizeClass == .compact {
-            TabView {
-                ArticleListView()
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Home")
-                }
-                
-                Text("Saved Feature Coming Soon")
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Saved")
-                }
-                
-                Text("Category Section Coming Soon")
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Categories")
-                }
-            }
+            AppTabNavigation() // Small devices use tabs
         } else {
-            fatalError("Must Create an AppSideBarNavigationView")
+            AppSideBarNavigation() // iPads use the sideBar
         }
         #else // Macos
         fatalError("Must Create an AppSideBarNavigationView")

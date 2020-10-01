@@ -13,4 +13,7 @@ import SwiftUI
 
 enum CommonStrings {
     static let reflectorTitle = "The Reflector"
+    static let categoriesTitle = "Categroies"
+    static let home = "Home"
+    static let saved = "Saved"
 }
