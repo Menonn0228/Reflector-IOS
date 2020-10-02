@@ -14,7 +14,7 @@ extension UINavigationController {
         super.viewDidLoad()
       
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = Theme.reflectorMaroon
+        appearance.backgroundColor = Theme.reflectorMaroon.asUIColor
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         

@@ -17,17 +17,15 @@ struct ArticleListView: View {
     @ObservedObject var store: ArticleListStore = .init()
     var body: some View {
         
-        NavigationView {
-            List(store.articles, id: \.title) { article in
-                NavigationLink(destination: ArticleContentView(model: article)) {
-                    ArticleCell(article: article)
-                        .onAppear {
-                            store.fetchMoreArticles(after: article)
-                        }
-                }
+        List(store.articles, id: \.title) { article in
+            NavigationLink(destination: ArticleContentView(model: article)) {
+                ArticleCell(article: article)
+                    .onAppear {
+                        store.fetchMoreArticles(after: article)
+                    }
             }
-            .navigationBarTitle(Text(CommonStrings.reflectorTitle))
         }
+        .navigationBarTitle(Text(CommonStrings.reflectorTitle))
     }
 }
 

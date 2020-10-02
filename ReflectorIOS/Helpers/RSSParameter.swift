@@ -39,8 +39,12 @@ struct RSSParameter {
 // MARK: - Enums
 
 extension RSSParameter {
-    enum FeedCategory: String {
+    enum FeedCategory: String, CaseIterable {
         case news
+        case covid19 = "covid-19"
+        case life
+        case opinion
+        case sports
     }
     enum TypeCategory: String {
         case article
