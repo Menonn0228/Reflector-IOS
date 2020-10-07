@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92F579C252E40D600D3BA38 /* HostingControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F579B252E40D600D3BA38 /* HostingControllers.swift */; };
 		E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B4E442513E42E0043E91B /* ArticleCell.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E92F579B252E40D600D3BA38 /* HostingControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllers.swift; sourceTree = "<group>"; };
 		E95B4E442513E42E0043E91B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		EAEBCF0B243D55AC00141FC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E92F579B252E40D600D3BA38 /* HostingControllers.swift */,
 				EAD448BA252550F400576CA2 /* CategorySelection */,
 				EAE73D862504551900AFDE7D /* ArticleContent */,
 				EA10AD2C24C35015001C337B /* ArticleList */,
@@ -449,6 +452,7 @@
 				EAD448BC2525510700576CA2 /* SelectCategoryView.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
+				E92F579C252E40D600D3BA38 /* HostingControllers.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
 				EAD448EB252562F900576CA2 /* ImageRepresentable.swift in Sources */,
