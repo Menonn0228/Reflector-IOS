@@ -9,9 +9,15 @@
 import SwiftUI
 
 struct SelectCategoryView: View {
+    
+    @State
+    var categories: [CategoryItem] = RSSParameter.FeedCategory.allCases.map { CategoryItem(type: $0) }
+    
     var body: some View {
-        Text("Select Category Coming Soon")
-            .navigationBarTitle(CommonStrings.categoriesTitle)
+        List(categories, id: \.type) { item in
+            Text(item.displayName)
+        }
+        .navigationBarTitle(Text(CommonStrings.categoriesTitle), displayMode: .automatic)
     }
 }
 
