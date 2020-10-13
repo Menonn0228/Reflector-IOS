@@ -15,8 +15,7 @@ struct SelectCategoryView: View {
     
     var body: some View {
         List(categories, id: \.type) { item in
-            NavigationLink(
-                destination: ArticleListView(category: item.type)) {
+            NavigationLink(destination: ArticleListView(category: item.type)) {
                 Text(item.displayName)
             }
         }
