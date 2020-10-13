@@ -15,7 +15,10 @@ struct SelectCategoryView: View {
     
     var body: some View {
         List(categories, id: \.type) { item in
-            Text(item.displayName)
+            NavigationLink(
+                destination: ArticleListView(category: item.type)) {
+                Text(item.displayName)
+            }
         }
         .navigationBarTitle(Text(CommonStrings.categoriesTitle), displayMode: .automatic)
     }
