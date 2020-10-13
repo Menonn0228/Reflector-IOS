@@ -11,12 +11,12 @@ import SwiftUI
 struct SelectCategoryView: View {
     
     @State
-    var categories: [CategoryItem] = RSSParameter.FeedCategory.allCases.map { CategoryItem(type: $0) }
+    private var categories = FeedCategory.allCases
     
     var body: some View {
-        List(categories, id: \.type) { item in
-            NavigationLink(destination: ArticleListView(category: item.type)) {
-                Text(item.displayName)
+        List(categories, id: \.self) { item in
+            NavigationLink(destination: ArticleListView(category: item)) {
+                Text(item.description)
             }
         }
         .navigationBarTitle(Text(CommonStrings.categoriesTitle), displayMode: .automatic)

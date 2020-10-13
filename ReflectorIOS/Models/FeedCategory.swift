@@ -1,19 +1,22 @@
 //
-//  CategoryItem.swift
+//  FeedCategory.swift
 //  ReflectorIOS
 //
-//  Created by Nikhil Menon on 10/12/20.
+//  Created by Nikhil Menon on 10/13/20.
 //  Copyright © 2020 Nikhil Menon. All rights reserved.
 //
 
 import Foundation
 
+typealias FeedCategory = RSSParameter.FeedCategory
 
-struct CategoryItem {
-    private(set) var type: RSSParameter.FeedCategory
+// MARK: - CustomStringConvertible
+
+extension FeedCategory: CustomStringConvertible {
     
-    var displayName: String {
-        switch type {
+    /// Returns a string representing the category that can be displayed to a user.
+    var description: String {
+        switch self {
         case .news:
             return "🌎 News"
         case .covid19:
