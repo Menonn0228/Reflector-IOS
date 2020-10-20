@@ -18,7 +18,11 @@ struct AppSideBarNavigation: View {
         case home, saved, categories
     }
     
-    @State private var selectedSection: Set<NavigationItem> = [.home]
+    @State
+    private var selectedSection: Set<NavigationItem> = [.home]
+    
+    @State
+    private var categories = FeedCategory.allCases
     
     /// Contains the home, saved, and categories that a user can navigate to.
     var sidebar: some View {
@@ -37,8 +41,10 @@ struct AppSideBarNavigation: View {
             .tag(NavigationItem.saved)
             
             Section(header: Text(NavigationItem.categories.rawValue.capitalized)) {
-                ForEach(RSSParameter.FeedCategory.allCases, id: \.self) { category in
-                        Text(category.rawValue)
+                ForEach(categories, id: \.self) { item in
+                    NavigationLink(destination: ArticleListView(category: item)) {
+                        Text(item.description)
+                    }
                 }
             }
         }

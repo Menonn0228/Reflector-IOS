@@ -20,13 +20,17 @@ fileprivate let triggerIndexOffset: Int = 8
 /// This is the ViewModel for the ArticleListView
 final class ArticleListStore: ObservableObject {
     
+    typealias FeedCategory = RSSParameter.FeedCategory
+    
     // MARK: - Properties
     
     /// Articles retrieved from database
     @Published
     private(set) var articles: [Article] = []
     /// This subscriber is here to hold the memory space for the subscription that listens to our RSSService calls.
-    private(set) var articleCanceller: AnyCancellable?
+    private var articleCanceller: AnyCancellable?
+    
+    private var category: FeedCategory?
     
     // MARK: - Init
     
@@ -42,7 +46,7 @@ extension ArticleListStore {
         let numItemsToFetch = articles.isEmpty ? initialLimit : additionalLimit
         let offset = articles.count
         
-        let parameters = RSSParameter(numItems: numItemsToFetch, offset: offset, category: .news)
+        let parameters = RSSParameter(numItems: numItemsToFetch, offset: offset, category: category)
         
         articleCanceller = RSSService.shared
             .fetchArticlesPublisher(with: parameters)
@@ -78,11 +82,8 @@ extension ArticleListStore {
     /// - Returns: Boolean that determines if more articles need to be fetched.
     private func shouldLoadMoreArticles(after article: Article?) -> Bool {
         
-        guard let article = article else {
-            return true
-        }
-        
-        guard !articles.isEmpty else {
+        guard let article = article,
+              !articles.isEmpty else {
             return true
         }
         
@@ -93,5 +94,13 @@ extension ArticleListStore {
         }
         
         return false
+    }
+    
+    /// Resets the articles array and fetches new ones based on the input parameter
+    /// - Parameter newCategory: The type or articles that will be fetched
+    func updateCategory(to newCategory: FeedCategory?) {
+        articles.removeAll()
+        category = newCategory
+        fetchArticles()
     }
 }

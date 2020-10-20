@@ -12,9 +12,23 @@ import Combine
 /// This view will display the previews for each of the articles.
 /// A user can tap on a row from this list to be taken to the full article.
 struct ArticleListView: View {
+    
+    typealias FeedCategory = RSSParameter.FeedCategory
+    
+    // MARK: - Properties
+    
     @State private var selectedTab = 0
     /// Used Store object is used to retrieve remote articles
-    @ObservedObject var store: ArticleListStore = .init()
+    @ObservedObject private var store = ArticleListStore()
+    
+    // MARK: - Init
+    
+    init(category: FeedCategory? = nil) {
+        store.updateCategory(to: category)
+    }
+    
+    // MARK: - UI
+    
     var body: some View {
         
         List(store.articles, id: \.title) { article in

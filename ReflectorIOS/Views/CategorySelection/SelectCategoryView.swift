@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct SelectCategoryView: View {
+    
+    @State
+    private var categories = FeedCategory.allCases
+    
     var body: some View {
-        Text("Select Category Coming Soon")
-            .navigationBarTitle(CommonStrings.categoriesTitle)
+        List(categories, id: \.self) { item in
+            NavigationLink(destination: ArticleListView(category: item)) {
+                Text(item.description)
+            }
+        }
+        .navigationBarTitle(Text(CommonStrings.categoriesTitle), displayMode: .automatic)
     }
 }
 
