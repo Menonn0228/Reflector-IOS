@@ -25,11 +25,7 @@ struct AppTabNavigation: View {
                 .accessibility(label: Text(TabTag.home.rawValue.capitalized))
                 .tag(TabTag.home)
             
-            NavigationView { Text("Saved Feature Coming Soon") }
-                .tabItem {
-                    SFSymbol.bookmarkFill.asImage
-                    Text(CommonStrings.saved)
-                }
+
                 .accessibility(label: Text(TabTag.saved.rawValue.capitalized))
                 .tag(TabTag.saved)
             
