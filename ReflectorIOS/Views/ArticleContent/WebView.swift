@@ -66,9 +66,7 @@ class WebViewDelegate: NSObject, WKNavigationDelegate {
                                     """
         
         webView.evaluateJavaScript(removeElementIdScript) { (response, error) in
-            if let error = error {
-                print(error)
-            }
+            debugPrint("Hello World")
         }
     }
 }

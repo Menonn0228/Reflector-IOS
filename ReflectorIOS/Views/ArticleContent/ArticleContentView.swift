@@ -15,11 +15,8 @@ struct ArticleContentView: View {
     
     var body: some View {
         WebView(urlString: model.link)
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
             .navigationBarTitle(Text(CommonStrings.reflectorTitle), displayMode: .inline)
-            .onAppear {
-                UINavigationBar.appearance().backgroundColor = .black
-            }
     }
 }
 

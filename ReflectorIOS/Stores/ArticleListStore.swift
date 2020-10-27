@@ -30,7 +30,7 @@ final class ArticleListStore: ObservableObject {
     /// This subscriber is here to hold the memory space for the subscription that listens to our RSSService calls.
     private var articleCanceller: AnyCancellable?
     
-    private var category: FeedCategory?
+    private(set) var category: FeedCategory?
     
     // MARK: - Init
     
