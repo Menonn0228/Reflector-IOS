@@ -34,12 +34,6 @@ struct AppSideBarNavigation: View {
             .accessibility(label: Text(NavigationItem.home.rawValue.capitalized))
             .tag(NavigationItem.home)
             
-            NavigationLink(destination: Text("Coming Soon")) {
-                Text(NavigationItem.saved.rawValue.capitalized)
-            }
-            .accessibility(label: Text("Saved"))
-            .tag(NavigationItem.saved)
-            
             Section(header: Text(NavigationItem.categories.rawValue.capitalized)) {
                 ForEach(categories, id: \.self) { item in
                     NavigationLink(destination: ArticleListView(category: item)) {
