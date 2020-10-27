@@ -15,14 +15,15 @@ struct WebView: UIViewRepresentable {
     private let viewDelegate = WebViewDelegate()
     
     private let webViewConfig: WKWebViewConfiguration = {
-        let config = WKWebViewConfiguration()
+        let preferences = WKPreferences()
+        var config = WKWebViewConfiguration()
+        config.preferences = preferences
         return config
     }()
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView(frame: .zero, configuration: webViewConfig)
         webView.navigationDelegate = viewDelegate
-        
         return webView
     }
     
@@ -30,6 +31,8 @@ struct WebView: UIViewRepresentable {
         load(urlString, forWebView: uiView)
     }
 }
+
+// MARK: - Loading URL
 
 extension WebView {
     private func parseURLRequest() -> URLRequest {
@@ -53,6 +56,15 @@ extension WebView {
 
 class WebViewDelegate: NSObject, WKNavigationDelegate {
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
+        if #available(iOS 14.0, *) {
+            preferences.allowsContentJavaScript = false
+        }
+        
+        preferences.preferredContentMode = .mobile
+        decisionHandler(.allow, preferences)
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let navbarElementID = "site-navbar-container"
         let advertisementID = "tncms-region-global-container-top"
@@ -65,8 +77,6 @@ class WebViewDelegate: NSObject, WKNavigationDelegate {
                                     element.parentElement.removeChild(element);
                                     """
         
-        webView.evaluateJavaScript(removeElementIdScript) { (response, error) in
-            debugPrint("Hello World")
-        }
+        webView.evaluateJavaScript(removeElementIdScript) { _, _ in }
     }
 }
