@@ -68,13 +68,25 @@ class WebViewDelegate: NSObject, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let navbarElementID = "site-navbar-container"
         let advertisementID = "tncms-region-global-container-top"
+        let bottomContentID = "tncms-region-article_side_top"
+        let tagsID = "asset-below"
+        let footerID = "site-footer-container"
         
         let removeElementIdScript = """
                                     var element = document.getElementById('\(navbarElementID)');
                                     element.parentElement.removeChild(element);
 
-                                    var element = document.getElementById('\(advertisementID)');
-                                    element.parentElement.removeChild(element);
+                                     var element = document.getElementById('\(advertisementID)');
+                                     element.parentElement.removeChild(element);
+
+                                     var element = document.getElementById('\(tagsID)');
+                                     element.parentElement.removeChild(element);
+
+                                     var element = document.getElementById('\(bottomContentID)');
+                                     element.parentElement.parentElement.remove()
+
+                                     var element = document.getElementById('\(footerID)');
+                                     element.parentElement.removeChild(element);
                                     """
         
         webView.evaluateJavaScript(removeElementIdScript) { _, _ in }
