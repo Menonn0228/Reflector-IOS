@@ -14,10 +14,12 @@ struct ArticleContentView: View {
     private(set) var model: Article
     
     var body: some View {
-        SFSafariWebView(url: URL(string: model.link!)!) // TODO: Find a Safer way to do this.
+        WebView(urlString: model.link)
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle(Text(CommonStrings.reflectorTitle), displayMode: .inline)
-            .navigationBarHidden(true)
+            .onAppear {
+                UINavigationBar.appearance().backgroundColor = .black
+            }
     }
 }
 
