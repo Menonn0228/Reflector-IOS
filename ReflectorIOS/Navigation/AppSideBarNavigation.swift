@@ -34,7 +34,6 @@ struct AppSideBarNavigation: View {
             .accessibility(label: Text(NavigationItem.home.rawValue.capitalized))
             .tag(NavigationItem.home)
             
-            
             Section(header: Text(NavigationItem.categories.rawValue.capitalized)) {
                 ForEach(categories, id: \.self) { item in
                     NavigationLink(destination: ArticleListView(category: item)) {

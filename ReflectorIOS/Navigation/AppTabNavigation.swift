@@ -24,7 +24,6 @@ struct AppTabNavigation: View {
                 }
                 .accessibility(label: Text(TabTag.home.rawValue.capitalized))
                 .tag(TabTag.home)
-            
 
                 .accessibility(label: Text(TabTag.saved.rawValue.capitalized))
                 .tag(TabTag.saved)
