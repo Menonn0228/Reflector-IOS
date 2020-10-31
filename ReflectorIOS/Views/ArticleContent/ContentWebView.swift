@@ -9,7 +9,6 @@
 import SwiftUI
 import WebKit
 
-
 /// A webview with a custom delegation to remove excess elements from a
 /// Refelector article content page.
 struct ContentWebView: UIViewRepresentable {

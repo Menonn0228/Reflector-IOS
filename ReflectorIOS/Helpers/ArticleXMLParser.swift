@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-
 protocol Parser {
     associatedtype ParsedObjectType
     func parse(data: Data) -> ParsedObjectType
