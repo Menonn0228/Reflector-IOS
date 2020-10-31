@@ -14,7 +14,7 @@ struct ArticleContentView: View {
     private(set) var model: Article
     
     var body: some View {
-        WebView(urlString: model.link)
+        ContentWebView(urlString: model.link)
             .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
             .navigationBarTitle(Text(CommonStrings.reflectorTitle), displayMode: .inline)
     }

@@ -1,5 +1,5 @@
 //
-//  WebView.swift
+//  ContentWebView.swift
 //  ReflectorIOS
 //
 //  Created by Nikhil Menon on 10/22/20.
@@ -9,10 +9,13 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
+
+/// A webview with a custom delegation to remove excess elements from a
+/// Refelector article content page.
+struct ContentWebView: UIViewRepresentable {
     
     private(set) var urlString: String?
-    private let viewDelegate = WebViewDelegate()
+    var viewDelegate: WKNavigationDelegate? = ContentWebViewDelegate()
     
     private let webViewConfig: WKWebViewConfiguration = {
         let preferences = WKPreferences()
@@ -34,7 +37,7 @@ struct WebView: UIViewRepresentable {
 
 // MARK: - Loading URL
 
-extension WebView {
+extension ContentWebView {
     private func parseURLRequest() -> URLRequest {
         guard let urlString = urlString,
               let url = URL(string: urlString) else {
@@ -54,7 +57,7 @@ extension WebView {
 
 // MARK: - Delegate
 
-class WebViewDelegate: NSObject, WKNavigationDelegate {
+class ContentWebViewDelegate: NSObject, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, preferences: WKWebpagePreferences, decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
         if #available(iOS 14.0, *) {
@@ -71,6 +74,7 @@ class WebViewDelegate: NSObject, WKNavigationDelegate {
         let bottomContentID = "tncms-region-article_side_top"
         let tagsID = "asset-below"
         let footerID = "site-footer-container"
+        let socialShareLinkID = "social-share-links hidden-print list-inline icon"
         
         let removeElementIdScript = """
                                     var element = document.getElementById('\(navbarElementID)');
@@ -87,6 +91,12 @@ class WebViewDelegate: NSObject, WKNavigationDelegate {
 
                                      var element = document.getElementById('\(footerID)');
                                      element.parentElement.removeChild(element);
+
+                                    var elements = document.getElementsByClassName(\"\(socialShareLinkID)\")
+
+                                    while(elements.length > 0) {
+                                         elements[0].parentNode.removeChild(elements[0]);
+                                     }
                                     """
         
         webView.evaluateJavaScript(removeElementIdScript) { _, _ in }
