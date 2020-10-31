@@ -17,17 +17,19 @@ struct ContentView: View {
         
         #if os(iOS)
         if horizontalSizeClass == .compact {
-            AppTabNavigation().accentColor(.reflectorMaroon) // Small devices use tabs
+            AppTabNavigation()
+                .accentColor(.reflectorMaroon) // Small devices use tabs
         } else {
-            AppSideBarNavigation() // iPads use the sideBar
+            AppSideBarNavigation()
+                .accentColor(.reflectorMaroon) // iPads use the sideBar
         }
         #else // Macos.accentColor(.reflectorMaroon)
         fatalError("Must Create an AppSideBarNavigationView")
         #endif
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
-    
     static var previews: some View {
         ContentView()
     }

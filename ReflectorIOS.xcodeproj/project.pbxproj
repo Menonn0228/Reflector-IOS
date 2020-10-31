@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E92F579C252E40D600D3BA38 /* HostingControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F579B252E40D600D3BA38 /* HostingControllers.swift */; };
+		E92F579C252E40D600D3BA38 /* WhiteStatusBarHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F579B252E40D600D3BA38 /* WhiteStatusBarHostingController.swift */; };
 		E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B4E442513E42E0043E91B /* ArticleCell.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA0857EB253642C300862F8F /* FeedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0857EA253642C300862F8F /* FeedCategory.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
+		EA335F8A25422EAE00519793 /* ContentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA335F8925422EAE00519793 /* ContentWebView.swift */; };
 		EA342550243D4E1800E32748 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA4D9F18251044AE001E200C /* UINavigationController+Maroon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D9F17251044AE001E200C /* UINavigationController+Maroon.swift */; };
 		EA4D9F1A25104A26001E200C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D9F1925104A26001E200C /* Theme.swift */; };
@@ -71,12 +72,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E92F579B252E40D600D3BA38 /* HostingControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingControllers.swift; sourceTree = "<group>"; };
+		E92F579B252E40D600D3BA38 /* WhiteStatusBarHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteStatusBarHostingController.swift; sourceTree = "<group>"; };
 		E95B4E442513E42E0043E91B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA0857EA253642C300862F8F /* FeedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategory.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
+		EA335F8925422EAE00519793 /* ContentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWebView.swift; sourceTree = "<group>"; };
 		EA34254E243D3B0A00E32748 /* GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GUIDE.md; sourceTree = "<group>"; };
 		EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleXMLParser.swift; sourceTree = "<group>"; };
 		EA4D9F17251044AE001E200C /* UINavigationController+Maroon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Maroon.swift"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				EAE73D89250456A800AFDE7D /* ArticleContentView.swift */,
 				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
+				EA335F8925422EAE00519793 /* ContentWebView.swift */,
 			);
 			path = ArticleContent;
 			sourceTree = "<group>";
@@ -302,7 +305,7 @@
 		EAEBCF0B243D55AC00141FC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E92F579B252E40D600D3BA38 /* HostingControllers.swift */,
+				E92F579B252E40D600D3BA38 /* WhiteStatusBarHostingController.swift */,
 				EAD448BA252550F400576CA2 /* CategorySelection */,
 				EAE73D862504551900AFDE7D /* ArticleContent */,
 				EA10AD2C24C35015001C337B /* ArticleList */,
@@ -456,8 +459,9 @@
 				EAD448BC2525510700576CA2 /* SelectCategoryView.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
 				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
-				E92F579C252E40D600D3BA38 /* HostingControllers.swift in Sources */,
+				E92F579C252E40D600D3BA38 /* WhiteStatusBarHostingController.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
+				EA335F8A25422EAE00519793 /* ContentWebView.swift in Sources */,
 				EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */,
 				EAD448EB252562F900576CA2 /* ImageRepresentable.swift in Sources */,
 				EA4D9F1A25104A26001E200C /* Theme.swift in Sources */,

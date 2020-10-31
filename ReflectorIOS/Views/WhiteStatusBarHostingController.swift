@@ -1,5 +1,5 @@
 //
-//  HostingControllers.swift
+//  WhiteStatusBarHostingController.swift
 //  ReflectorIOS
 //
 //  Created by Austin Brown on 10/7/20.
@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-class HostingController<ContentView>: UIHostingController<ContentView> where ContentView : View {
+
+class WhiteStatusBarHostingController<ContentView>: UIHostingController<ContentView> where ContentView : View {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

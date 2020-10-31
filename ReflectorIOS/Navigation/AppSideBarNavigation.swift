@@ -43,6 +43,7 @@ struct AppSideBarNavigation: View {
             }
         }
         .accentColor(Color.reflectorMaroon)
+        .navigationBarTitle("", displayMode: .inline)
     }
     
     @ViewBuilder

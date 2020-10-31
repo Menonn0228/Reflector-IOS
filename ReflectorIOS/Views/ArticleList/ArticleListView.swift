@@ -17,14 +17,18 @@ struct ArticleListView: View {
     
     // MARK: - Properties
     
-    @State private var selectedTab = 0
     /// Used Store object is used to retrieve remote articles
     @ObservedObject private var store = ArticleListStore()
+    
+    private var navigationBarTitleText: String = CommonStrings.reflectorTitle
+    private var navigationDisplayMode: NavigationBarItem.TitleDisplayMode = .automatic
     
     // MARK: - Init
     
     init(category: FeedCategory? = nil) {
         store.updateCategory(to: category)
+        navigationBarTitleText = (store.category == nil) ? CommonStrings.reflectorTitle : store.category!.description
+        navigationDisplayMode = (store.category == nil) ? .automatic : .inline
     }
     
     // MARK: - UI
@@ -39,7 +43,7 @@ struct ArticleListView: View {
                     }
             }
         }
-        .navigationBarTitle(Text(CommonStrings.reflectorTitle))
+        .navigationBarTitle(Text(navigationBarTitleText), displayMode: navigationDisplayMode)
     }
 }
 

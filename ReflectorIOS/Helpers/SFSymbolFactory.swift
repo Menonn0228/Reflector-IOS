@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 /// Enum consisting of all the string ID's for SFSymbols used in the app
 enum SFSymbol: String {
     case houseFill = "house.fill"

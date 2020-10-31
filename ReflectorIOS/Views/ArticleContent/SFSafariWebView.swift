@@ -15,7 +15,10 @@ struct SFSafariWebView: UIViewControllerRepresentable {
     private(set) var url: URL
     
     func makeUIViewController(context: Context) -> SFSafariViewController {
-        let vc = SFSafariViewController(url: url)
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        
+        let vc = SFSafariViewController(url: url, configuration: config)
         vc.delegate = context.coordinator
         return vc
     }
