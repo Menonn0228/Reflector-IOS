@@ -32,6 +32,7 @@
 		EA621205244AA2A600DC85C8 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA621206244AA2AD00DC85C8 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
 		EA621207244AA2AE00DC85C8 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
+		EA6A957F25602A3A00625700 /* ActivitySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A957E25602A3A00625700 /* ActivitySquare.swift */; };
 		EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */; };
 		EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A21232505610E0001D089 /* CommonStrings.swift */; };
 		EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
@@ -87,6 +88,7 @@
 		EA4D9F1925104A26001E200C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSService.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		EA6A957E25602A3A00625700 /* ActivitySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySquare.swift; sourceTree = "<group>"; };
 		EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParameter.swift; sourceTree = "<group>"; };
 		EA8A21232505610E0001D089 /* CommonStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStrings.swift; sourceTree = "<group>"; };
 		EA8F28B524452B96005E23C4 /* ArticleListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListStore.swift; sourceTree = "<group>"; };
@@ -191,6 +193,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		EA6A958325602ACE00625700 /* UIRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				EA1A9589255B8CF700FE1D80 /* ActivityIndicator.swift */,
+				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
+			);
+			path = UIRepresentables;
+			sourceTree = "<group>";
+		};
 		EA75EA46250A85C3005B82F9 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +246,7 @@
 			children = (
 				EACD73D124395A9500B399E0 /* AppDelegate.swift */,
 				EACD73D324395A9500B399E0 /* SceneDelegate.swift */,
+				EA6A958325602ACE00625700 /* UIRepresentables */,
 				EAAD675924C3BB480081A750 /* Navigation */,
 				EA5B50D624396ABD003E8BFE /* Models */,
 				EAEBCF0B243D55AC00141FC0 /* Views */,
@@ -298,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				EAE73D89250456A800AFDE7D /* ArticleContentView.swift */,
-				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
 				EA335F8925422EAE00519793 /* ContentWebView.swift */,
 			);
 			path = ArticleContent;
@@ -308,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				E92F579B252E40D600D3BA38 /* WhiteStatusBarHostingController.swift */,
-				EA1A9589255B8CF700FE1D80 /* ActivityIndicator.swift */,
+				EA6A957E25602A3A00625700 /* ActivitySquare.swift */,
 				EAD448BA252550F400576CA2 /* CategorySelection */,
 				EAE73D862504551900AFDE7D /* ArticleContent */,
 				EA10AD2C24C35015001C337B /* ArticleList */,
@@ -456,6 +467,7 @@
 				EA0857EB253642C300862F8F /* FeedCategory.swift in Sources */,
 				EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */,
 				EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */,
+				EA6A957F25602A3A00625700 /* ActivitySquare.swift in Sources */,
 				EA4D9F18251044AE001E200C /* UINavigationController+Maroon.swift in Sources */,
 				EAD448DB25255B4400576CA2 /* AppSideBarNavigation.swift in Sources */,
 				EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */,

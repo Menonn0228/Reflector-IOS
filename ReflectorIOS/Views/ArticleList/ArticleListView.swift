@@ -43,7 +43,7 @@ struct ArticleListView: View {
                 }
             }
             .navigationBarTitle(Text(navigationBarTitleText), displayMode: navigationDisplayMode)
-            .overlay(ActivityIndicator($store.isFetching))
+            .overlay(ActivitySquare($store.isFetching), alignment: .center)
     }
 }
 
