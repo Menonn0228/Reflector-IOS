@@ -25,11 +25,12 @@ final class ArticleListStore: ObservableObject {
     // MARK: - Properties
     
     /// Articles retrieved from database
-    @Published
-    private(set) var articles: [Article] = []
+    @Published private(set) var articles: [Article] = []
+    /// Determines if the store is performing a network request.
+    @Published var isFetching: Bool = false
     /// This subscriber is here to hold the memory space for the subscription that listens to our RSSService calls.
     private var articleCanceller: AnyCancellable?
-    
+    /// The article category that will be fetched
     private(set) var category: FeedCategory?
     
     // MARK: - Init
@@ -48,10 +49,13 @@ extension ArticleListStore {
         
         let parameters = RSSParameter(numItems: numItemsToFetch, offset: offset, category: category)
         
+        isFetching = true
         articleCanceller = RSSService.shared
             .fetchArticlesPublisher(with: parameters)
             .removeDuplicates()
-            .sink { completion in
+            .sink { [weak self] completion in
+                self?.isFetching = false
+                
                 switch completion {
                 case .finished:
                     print("Finished with success")
@@ -77,7 +81,10 @@ extension ArticleListStore {
         fetchArticles()
     }
     
-    /// Returns a boolean value on weather or not the store should fetch more articles
+    /// Returns a boolean value on whether or not the store should fetch more articles
+    /// Will return `true` if `articles` property is empty, or if a *trigger article* is passed in.
+    /// - A **Trigger Article** is an article that can cause the loading of more articles. This is normally an article at the end of the list.
+    ///
     /// - Parameter article: Return articles after the given article
     /// - Returns: Boolean that determines if more articles need to be fetched.
     private func shouldLoadMoreArticles(after article: Article?) -> Bool {

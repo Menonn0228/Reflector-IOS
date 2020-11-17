@@ -34,16 +34,16 @@ struct ArticleListView: View {
     // MARK: - UI
     
     var body: some View {
-        
-        List(store.articles, id: \.title) { article in
-            NavigationLink(destination: ArticleContentView(model: article)) {
-                ArticleCell(article: article)
-                    .onAppear {
-                        store.fetchMoreArticles(after: article)
-                    }
+            List(store.articles, id: \.title) { article in
+                NavigationLink(destination: ArticleContentView(model: article)) {
+                    ArticleCell(article: article)
+                        .onAppear {
+                            store.fetchMoreArticles(after: article)
+                        }
+                }
             }
-        }
-        .navigationBarTitle(Text(navigationBarTitleText), displayMode: navigationDisplayMode)
+            .navigationBarTitle(Text(navigationBarTitleText), displayMode: navigationDisplayMode)
+            .overlay(ActivitySquare($store.isFetching), alignment: .center)
     }
 }
 

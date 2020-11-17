@@ -11,6 +11,7 @@
 		E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B4E442513E42E0043E91B /* ArticleCell.swift */; };
 		EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */; };
 		EA0857EB253642C300862F8F /* FeedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0857EA253642C300862F8F /* FeedCategory.swift */; };
+		EA1A958A255B8CF700FE1D80 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A9589255B8CF700FE1D80 /* ActivityIndicator.swift */; };
 		EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2551C825054BD30017E67F /* SFSafariWebView.swift */; };
 		EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */; };
 		EA335F8A25422EAE00519793 /* ContentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA335F8925422EAE00519793 /* ContentWebView.swift */; };
@@ -31,6 +32,7 @@
 		EA621205244AA2A600DC85C8 /* ArticleXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA34254F243D4E1800E32748 /* ArticleXMLParser.swift */; };
 		EA621206244AA2AD00DC85C8 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
 		EA621207244AA2AE00DC85C8 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
+		EA6A957F25602A3A00625700 /* ActivitySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A957E25602A3A00625700 /* ActivitySquare.swift */; };
 		EA7BCBB2243E73AD00A4AB14 /* RSSParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */; };
 		EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A21232505610E0001D089 /* CommonStrings.swift */; };
 		EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
@@ -76,6 +78,7 @@
 		E95B4E442513E42E0043E91B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		EA0254F325008EDF0076FD22 /* ArticlePublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePublishing.swift; sourceTree = "<group>"; };
 		EA0857EA253642C300862F8F /* FeedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategory.swift; sourceTree = "<group>"; };
+		EA1A9589255B8CF700FE1D80 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		EA2551C825054BD30017E67F /* SFSafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariWebView.swift; sourceTree = "<group>"; };
 		EA33262324F80B7700282FF6 /* URLComponents+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Helpers.swift"; sourceTree = "<group>"; };
 		EA335F8925422EAE00519793 /* ContentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWebView.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		EA4D9F1925104A26001E200C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EA5B50CE2439684E003E8BFE /* RSSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSService.swift; sourceTree = "<group>"; };
 		EA5B50D224396AB9003E8BFE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		EA6A957E25602A3A00625700 /* ActivitySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySquare.swift; sourceTree = "<group>"; };
 		EA7BCBB1243E73AD00A4AB14 /* RSSParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParameter.swift; sourceTree = "<group>"; };
 		EA8A21232505610E0001D089 /* CommonStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStrings.swift; sourceTree = "<group>"; };
 		EA8F28B524452B96005E23C4 /* ArticleListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListStore.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		EA6A958325602ACE00625700 /* UIRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				EA1A9589255B8CF700FE1D80 /* ActivityIndicator.swift */,
+				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
+			);
+			path = UIRepresentables;
+			sourceTree = "<group>";
+		};
 		EA75EA46250A85C3005B82F9 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 			children = (
 				EACD73D124395A9500B399E0 /* AppDelegate.swift */,
 				EACD73D324395A9500B399E0 /* SceneDelegate.swift */,
+				EA6A958325602ACE00625700 /* UIRepresentables */,
 				EAAD675924C3BB480081A750 /* Navigation */,
 				EA5B50D624396ABD003E8BFE /* Models */,
 				EAEBCF0B243D55AC00141FC0 /* Views */,
@@ -296,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				EAE73D89250456A800AFDE7D /* ArticleContentView.swift */,
-				EA2551C825054BD30017E67F /* SFSafariWebView.swift */,
 				EA335F8925422EAE00519793 /* ContentWebView.swift */,
 			);
 			path = ArticleContent;
@@ -306,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				E92F579B252E40D600D3BA38 /* WhiteStatusBarHostingController.swift */,
+				EA6A957E25602A3A00625700 /* ActivitySquare.swift */,
 				EAD448BA252550F400576CA2 /* CategorySelection */,
 				EAE73D862504551900AFDE7D /* ArticleContent */,
 				EA10AD2C24C35015001C337B /* ArticleList */,
@@ -453,6 +467,7 @@
 				EA0857EB253642C300862F8F /* FeedCategory.swift in Sources */,
 				EA0254F425008EE00076FD22 /* ArticlePublishing.swift in Sources */,
 				EA33262424F80B7700282FF6 /* URLComponents+Helpers.swift in Sources */,
+				EA6A957F25602A3A00625700 /* ActivitySquare.swift in Sources */,
 				EA4D9F18251044AE001E200C /* UINavigationController+Maroon.swift in Sources */,
 				EAD448DB25255B4400576CA2 /* AppSideBarNavigation.swift in Sources */,
 				EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */,
@@ -474,6 +489,7 @@
 				E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */,
 				EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */,
 				EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */,
+				EA1A958A255B8CF700FE1D80 /* ActivityIndicator.swift in Sources */,
 				EAD448F025256CBB00576CA2 /* Colorable.swift in Sources */,
 				EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */,
 			);
