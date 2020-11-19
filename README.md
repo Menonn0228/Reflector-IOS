@@ -16,9 +16,9 @@ Develop a quality-focused app that focuses on simplicity and stability while mai
 ## Technical Application Specifications
 
 ### Build Information
-* Language: Swift 5.2
+* Language: Swift 5.3
 * User Interface Framework: SwiftUI
-* Supported Devices: iOS 13.0 or newer.
+* Supported Devices: iOS 14.0 or later.
 
 ### Primary Design Architecture
 **MVVM** — For those not familiar with this architecture, this is called Model View ViewModel. Basically, you have your Model (Data), a View (The interface), and a ViewModel for each view. The ViewModel classes will only contain the data from a model  that needs to be presented in that view. This separation allows for the Views to avoid interacting with the model data. The ViewModels should tell the View what to display. Research MVVM in SwiftUI for more information.
