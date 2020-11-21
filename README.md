@@ -8,8 +8,8 @@ The Reflector mobile application allows users to view articles posted on [ The R
 Develop a quality-focused app that focuses on simplicity and stability while maintaining a strong code base with detailed documentation within the project. With this goal in mind, we can ensure that future developers will have an easy time jumping in given the simplicity, proper design architecture, and detailed documentation.
 
 ## Primary Application Features
-- [ ] User is greeted with the latest articles from the [ Reflector News tab ] and can tap on an article to view the full content of the tapped article.
-- [ ] User can select a category to filter for articles in the tapped category. Categories may include Sports, News, Entertainment, etc. (The tabs that are shown on the [ Reflector Website ](https://www.reflector-online.com)
+- [x] User is greeted with the latest articles from the [ Reflector News tab ] and can tap on an article to view the full content of the tapped article.
+- [x] User can select a category to filter for articles in the tapped category. Categories may include Sports, News, Entertainment, etc. (The tabs that are shown on the [ Reflector Website ](https://www.reflector-online.com)
 
 *Note: Features are subject to change. Features are based on order of importance.*
 - - - -
@@ -19,9 +19,6 @@ Develop a quality-focused app that focuses on simplicity and stability while mai
 * Language: Swift 5.2
 * User Interface Framework: SwiftUI
 * Supported Devices: iOS 13.0 or newer.
-
-### Primary Design Architecture
-**MVVM** — For those not familiar with this architecture, this is called Model View ViewModel. Basically, you have your Model (Data), a View (The interface), and a ViewModel for each view. The ViewModel classes will only contain the data from a model  that needs to be presented in that view. This separation allows for the Views to avoid interacting with the model data. The ViewModels should tell the View what to display. Research MVVM in SwiftUI for more information.
 
 ### Dependencies Used
 None for now. Hooray!
