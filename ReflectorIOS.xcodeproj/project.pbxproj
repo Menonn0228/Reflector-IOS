@@ -37,8 +37,7 @@
 		EA8A21242505610E0001D089 /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A21232505610E0001D089 /* CommonStrings.swift */; };
 		EA8F28B624452B96005E23C4 /* ArticleListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F28B524452B96005E23C4 /* ArticleListStore.swift */; };
 		EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD675A24C3BB640081A750 /* ContentView.swift */; };
-		EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D124395A9500B399E0 /* AppDelegate.swift */; };
-		EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D324395A9500B399E0 /* SceneDelegate.swift */; };
+		EACD73D224395A9500B399E0 /* ReflectorIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D124395A9500B399E0 /* ReflectorIOSApp.swift */; };
 		EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EACD73D524395A9500B399E0 /* ReflectorIOS.xcdatamodeld */; };
 		EACD73DB24395A9A00B399E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACD73DA24395A9A00B399E0 /* Assets.xcassets */; };
 		EACD73DE24395A9A00B399E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACD73DD24395A9A00B399E0 /* Preview Assets.xcassets */; };
@@ -94,8 +93,7 @@
 		EA8F28B524452B96005E23C4 /* ArticleListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListStore.swift; sourceTree = "<group>"; };
 		EAAD675A24C3BB640081A750 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EACD73CE24395A9500B399E0 /* ReflectorIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectorIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EACD73D124395A9500B399E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EACD73D324395A9500B399E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EACD73D124395A9500B399E0 /* ReflectorIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectorIOSApp.swift; sourceTree = "<group>"; };
 		EACD73D624395A9500B399E0 /* ReflectorIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReflectorIOS.xcdatamodel; sourceTree = "<group>"; };
 		EACD73DA24395A9A00B399E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACD73DD24395A9A00B399E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -244,8 +242,7 @@
 		EACD73D024395A9500B399E0 /* ReflectorIOS */ = {
 			isa = PBXGroup;
 			children = (
-				EACD73D124395A9500B399E0 /* AppDelegate.swift */,
-				EACD73D324395A9500B399E0 /* SceneDelegate.swift */,
+				EACD73D124395A9500B399E0 /* ReflectorIOSApp.swift */,
 				EA6A958325602ACE00625700 /* UIRepresentables */,
 				EAAD675924C3BB480081A750 /* Navigation */,
 				EA5B50D624396ABD003E8BFE /* Models */,
@@ -473,7 +470,7 @@
 				EAAD675B24C3BB640081A750 /* ContentView.swift in Sources */,
 				EAD448BC2525510700576CA2 /* SelectCategoryView.swift in Sources */,
 				EACD73D724395A9500B399E0 /* ReflectorIOS.xcdatamodeld in Sources */,
-				EACD73D224395A9500B399E0 /* AppDelegate.swift in Sources */,
+				EACD73D224395A9500B399E0 /* ReflectorIOSApp.swift in Sources */,
 				E92F579C252E40D600D3BA38 /* WhiteStatusBarHostingController.swift in Sources */,
 				EAE73D8A250456A800AFDE7D /* ArticleContentView.swift in Sources */,
 				EA335F8A25422EAE00519793 /* ContentWebView.swift in Sources */,
@@ -487,7 +484,6 @@
 				EAD448D625255B3A00576CA2 /* AppTabNavigation.swift in Sources */,
 				EA5B50CF2439684E003E8BFE /* RSSService.swift in Sources */,
 				E95B4E452513E42E0043E91B /* ArticleCell.swift in Sources */,
-				EACD73D424395A9500B399E0 /* SceneDelegate.swift in Sources */,
 				EA2551C925054BD30017E67F /* SFSafariWebView.swift in Sources */,
 				EA1A958A255B8CF700FE1D80 /* ActivityIndicator.swift in Sources */,
 				EAD448F025256CBB00576CA2 /* Colorable.swift in Sources */,
@@ -601,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -656,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -16,9 +16,9 @@ Develop a quality-focused app that focuses on simplicity and stability while mai
 ## Technical Application Specifications
 
 ### Build Information
-* Language: Swift 5.2
+* Language: Swift 5.3
 * User Interface Framework: SwiftUI
-* Supported Devices: iOS 13.0 or newer.
+* Supported Devices: iOS 14.0 or later.
 
 ### Dependencies Used
 None for now. Hooray!
